@@ -1,49 +1,78 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import Navbar from "../newSrc2/components/navbar/navbar";
+import Footer from "../newSrc2/components/footer/newFooter";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import StyledButton from "../newSrc2/components/styledButton/styledButton";
+import logoLarge from "../newSrc2/assets/logoLarge.png";
+import { Link } from "gatsby";
+import { navigate } from "gatsby";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const fontStyle = {
+  fontFamily: "Inter",
+  fontWeight: 600,
+  color: "#424245",
+  textAlign: "center",
+};
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-const NotFoundPage = () => {
+function PageNotFound() {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
+    <>
+      <Navbar />
+      <Box
+        sx={{
+          py: { xs: "15vh", lg: "15vh", xl: "20vh" },
+          zIndex: -10000000,
+        }}
+      >
+        <Grid
+          container
+          width={{ xs: "90vw", lg: "80vw", xl: "70vw" }}
+          spacing={{ xs: 3, lg: 8 }}
+          ml={{ xs: "5vw", lg: "10vw", xl: "15vw" }}
+        >
+          <Grid item xs={12} lg={6} textAlign="center" my="auto">
+            <Typography
+              variant="h1"
+              sx={{ ...fontStyle, mb: { xs: 3, lg: 2, xl: 4 } }}
+            >
+              Sorry!
+            </Typography>
+            <Typography
+              variant="h4"
+              sx={{
+                ...fontStyle,
+                m: "0 auto",
+                width: "100%",
+                maxWidth: "450px",
+              }}
+            >
+              We can’t seem to find the page you’re looking for.
+            </Typography>
+            <StyledButton
+              sx={{
+                bgcolor: "black",
+                fontFamily: "Inter",
+                borderRadius: "30px",
+                width: "200px",
+                color: "white",
+                mt: { xs: 4, lg: 5, xl: 6 },
+              }}
+              onClick={() => navigate("/")}
+              variant="contained"
+            >
+              take me home
+            </StyledButton>
+          </Grid>
+          <Grid item xs={12} lg={6} my="auto">
+            <img src={logoLarge} style={{ maxWidth: "100%" }} />
+          </Grid>
+        </Grid>
+      </Box>
+      <Footer />
+    </>
+  );
 }
 
-export default NotFoundPage
-
-export const Head = () => <title>Not found</title>
+export default PageNotFound;
