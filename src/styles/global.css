@@ -131,7 +131,7 @@ button.cta:hover {
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/landing/landingImg.jpg");
+  background-image: url("../newSrc2/assets/landing/landingImg.jpg");
   position: relative;
 }
 
@@ -142,7 +142,7 @@ button.cta:hover {
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/landscaping/placeholder.png");
+  background-image: url("../newSrc2/assets/landscaping/placeholder.png");
   position: relative;
 }
 
@@ -153,7 +153,7 @@ button.cta:hover {
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/lotSweeping/placeholder.png");
+  background-image: url("../newSrc2/assets/lotSweeping/placeholder.png");
   position: relative;
 }
 
@@ -164,7 +164,7 @@ button.cta:hover {
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/snow/placeholder.png");
+  background-image: url("../newSrc2/assets/snow/placeholder.png");
   position: relative;
 }
 
@@ -192,54 +192,54 @@ button.cta:hover {
   height: 35vh;
 }
 .small-header.medical {
-  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/medical.png");
+  background-image: url("../newSrc2/assets/janitorial/facilityTemplate/medical.png");
 }
 .small-header.school {
-  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/school.png");
+  background-image: url("../newSrc2/assets/janitorial/facilityTemplate/school.png");
 }
 .small-header.data {
-  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/data.png");
+  background-image: url("../newSrc2/assets/janitorial/facilityTemplate/data.png");
 }
 .small-header.college {
-  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/college.png");
+  background-image: url("../newSrc2/assets/janitorial/facilityTemplate/college.png");
 }
 .small-header.warehouse {
-  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/warehouse.png");
+  background-image: url("../newSrc2/assets/janitorial/facilityTemplate/warehouse.png");
 }
 .small-header.offices {
-  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/offices.png");
+  background-image: url("../newSrc2/assets/janitorial/facilityTemplate/offices.png");
 }
 
 .small-header.commercial-janitorial {
-  background-image: url("./newSrc2/assets/janitorial/services/commercial.png");
+  background-image: url("../newSrc2/assets/janitorial/services/commercial.png");
 }
 .small-header.window {
-  background-image: url("./newSrc2/assets/janitorial/services/window.png");
+  background-image: url("../newSrc2/assets/janitorial/services/window.png");
 }
 .small-header.dusting {
-  background-image: url("./newSrc2/assets/janitorial/services/dusting.png");
+  background-image: url("../newSrc2/assets/janitorial/services/dusting.png");
 }
 .small-header.porter {
-  background-image: url("./newSrc2/assets/janitorial/services/porter.png");
+  background-image: url("../newSrc2/assets/janitorial/services/porter.png");
 }
 .small-header.restroom {
-  background-image: url("./newSrc2/assets/janitorial/services/restroom.png");
+  background-image: url("../newSrc2/assets/janitorial/services/restroom.png");
 }
 .small-header.disinfecting {
-  background-image: url("./newSrc2/assets/janitorial/services/disinfecting.png");
+  background-image: url("../newSrc2/assets/janitorial/services/disinfecting.png");
 }
 
 .small-header.carpet {
-  background-image: url("./newSrc2/assets/janitorial/services/carpet.png");
+  background-image: url("../newSrc2/assets/janitorial/services/carpet.png");
 }
 .small-header.floor {
-  background-image: url("./newSrc2/assets/janitorial/services/floor.png");
+  background-image: url("../newSrc2/assets/janitorial/services/floor.png");
 }
 .small-header.recycling {
-  background-image: url("./newSrc2/assets/janitorial/services/recycling.png");
+  background-image: url("../newSrc2/assets/janitorial/services/recycling.png");
 }
 .small-header.pressure {
-  background-image: url("./newSrc2/assets/janitorial/services/pressure.png");
+  background-image: url("../newSrc2/assets/janitorial/services/pressure.png");
 }
 
 .small-header.locations {
@@ -255,11 +255,11 @@ button.cta:hover {
 }
 
 .small-header.about {
-  background-image: url("./newSrc2/assets/about/header.png");
+  background-image: url("../newSrc2/assets/about/header.png");
 }
 
 .small-header.core {
-  background-image: url("./newSrc2/assets/corevalues/header.png");
+  background-image: url("../newSrc2/assets/corevalues/header.png");
 }
 
 .small-header.privacy {
@@ -267,7 +267,7 @@ button.cta:hover {
 }
 
 .small-header.leadership {
-  background-image: url("./newSrc2/assets/leadership/header.png");
+  background-image: url("../newSrc2/assets/leadership/header.png");
 }
 
 .redesign-service-card {
@@ -285,14 +285,14 @@ button.cta:hover {
   height: calc(90vh - 48px);
   background-size: cover;
   background-position: center center;
-  background-image: url("./images/commercial/asphalt3.jpg");
+  background-image: url("../images/commercial/asphalt3.jpg");
 }
 .contact-bg.xl {
   width: 100%;
   height: calc(90vh - 48px);
   background-size: cover;
   background-position: center center;
-  background-image: url("./images/commercial/asphalt3.jpg");
+  background-image: url("../images/commercial/asphalt3.jpg");
 }
 
 .redesign {
@@ -304,53 +304,53 @@ button.cta:hover {
 }
 
 .redesign.snow {
-  background-image: url("./newSrc2/assets/services/snow.png");
+  background-image: url("../newSrc2/assets/services/snow.png");
 }
 
 .redesign.corevalues {
-  background-image: url("./newSrc2/assets/about/corevalues.png");
+  background-image: url("../newSrc2/assets/about/corevalues.png");
 }
 .redesign.leadership {
-  background-image: url("./newSrc2/assets/about/leadership.png");
+  background-image: url("../newSrc2/assets/about/leadership.png");
 }
 .redesign.givesback {
-  background-image: url("./newSrc2/assets/about/givesback.png");
+  background-image: url("../newSrc2/assets/about/givesback.png");
 }
 .redesign.careers {
-  background-image: url("./newSrc2/assets/about/careers.png");
+  background-image: url("../newSrc2/assets/about/careers.png");
 }
 
 .redesign.asphalt {
-  background-image: url("./newSrc2/assets/services/asphalt.png");
+  background-image: url("../newSrc2/assets/services/asphalt.png");
 }
 .redesign.concrete {
-  background-image: url("./newSrc2/assets/services/concrete.png");
+  background-image: url("../newSrc2/assets/services/concrete.png");
 }
 
 .redesign.recurring {
-  background-image: url("./newSrc2/assets/services/recurring.png");
+  background-image: url("../newSrc2/assets/services/recurring.png");
 }
 .redesign.roofing {
-  background-image: url("./newSrc2/assets/services/roofing.png");
+  background-image: url("../newSrc2/assets/services/roofing.png");
 }
 .redesign.capex {
-  background-image: url("./newSrc2/assets/services/capex.png");
+  background-image: url("../newSrc2/assets/services/capex.png");
 }
 .redesign.evchargers {
-  background-image: url("./newSrc2/assets/services/ev.png");
+  background-image: url("../newSrc2/assets/services/ev.png");
 }
 .redesign.painting {
-  background-image: url("./newSrc2/assets/services/painting.png");
+  background-image: url("../newSrc2/assets/services/painting.png");
 }
 
 .redesign.landscaping {
-  background-image: url("./newSrc2/assets/services/landscaping.png");
+  background-image: url("../newSrc2/assets/services/landscaping.png");
 }
 .redesign.lotsweeping {
-  background-image: url("./newSrc2/assets/services/lotsweeping.png");
+  background-image: url("../newSrc2/assets/services/lotsweeping.png");
 }
 .redesign.janitorial {
-  background-image: url("./newSrc2/assets/services/janitorial.png");
+  background-image: url("../newSrc2/assets/services/janitorial.png");
 }
 
 #solutions_small {
@@ -360,7 +360,7 @@ button.cta:hover {
   height: 50vh;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/landing/solutions.png");
+  background-image: url("../newSrc2/assets/landing/solutions.png");
   position: relative;
   z-index: 1;
 }
@@ -372,7 +372,7 @@ button.cta:hover {
   padding: 20vh 0 30vh 0;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/landing/solutions.png");
+  background-image: url("../newSrc2/assets/landing/solutions.png");
   position: relative;
   z-index: 1;
 }
@@ -384,7 +384,7 @@ button.cta:hover {
   padding: 35vh 0 35vh 0;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/landing/solutions.png");
+  background-image: url("../newSrc2/assets/landing/solutions.png");
   position: relative;
   z-index: 1;
 }
@@ -396,7 +396,7 @@ button.cta:hover {
   padding: 50vh 0 50vh 0;
   top: 0;
   left: 0;
-  background-image: url("./newSrc2/assets/landing/solutions.png");
+  background-image: url("../newSrc2/assets/landing/solutions.png");
   position: relative;
   z-index: 1;
 }
