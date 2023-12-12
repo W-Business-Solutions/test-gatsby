@@ -1,7 +1,8 @@
 import React, { createContext, useState } from "react";
 
 export const ScreenSizeContext = createContext({
-  screenSize: "small",
+  screenSize: "",
+  setScreenSize: () => {},
 });
 
 function ScreenSizeContextWrapper({ children }) {
