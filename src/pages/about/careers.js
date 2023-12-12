@@ -5,7 +5,7 @@ import icon1 from "../newSrc2/assets/careers/icon1.png";
 import icon2 from "../newSrc2/assets/careers/icon2.png";
 import icon3 from "../newSrc2/assets/careers/icon3.png";
 import { Helmet } from "react-helmet-async";
-import CareersTemplate from "../newSrc2/components/careersTemplate/careersTemplate";
+import CareersTemplate from "../../newSrc2/components/careersTemplate/careersTemplate";
 
 function Careers() {
   return (
