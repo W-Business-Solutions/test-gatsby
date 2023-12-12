@@ -1,0 +1,607 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  text-align: center;
+}
+
+/* .header-text {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+  width: 100%;
+  text-align:center;
+  z-index: 50;
+  color: white;
+  font-family: 'Raleway', 'sans-serif';
+  font-weight: 300;
+  font-size: clamp(1.9em, 5vw, 7em);
+  letter-spacing: 5px;
+  margin-bottom: 0px;
+} */
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  width: 99%;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: clamp(40px, 4vw, 7em);
+  letter-spacing: 5px;
+  margin-bottom: 0px;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.header-text.franchise-header {
+  font-size: clamp(32px, 4vw, 7em);
+}
+
+.header-subtext {
+  font-size: 0.5em;
+  letter-spacing: 5px;
+}
+
+.header-text.franchise-header .header-subtext {
+  margin-top: 15px;
+  font-size: 0.5em;
+}
+
+a.cta {
+  background-color: #0b56a4;
+  color: white !important;
+  padding: 4px 10px 2px 10px;
+  border: 2px solid #0b56a4;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 0.0705em;
+  display: inline-block;
+  /* font-weight: 500; */
+}
+
+a.cta:hover {
+  background-color: white;
+  color: #0b56a4 !important;
+  border: 2px solid #0b56a4;
+  transition: 0.5s;
+}
+
+b.right {
+  color: #007aff;
+}
+
+button.cta {
+  text-decoration: none !important;
+  border: 2px solid #0b56a4 !important;
+  color: #0b56a4 !important;
+  background-color: transparent !important;
+  font-size: 0.85em !important;
+  font-family: "Muli", sans-serif !important;
+  letter-spacing: 0.07em !important;
+  padding: 4px 10px 2px 10px;
+  margin-left: 10px;
+}
+
+button.cta:disabled:hover {
+  border: 2px solid #0b56a4 !important;
+  color: #0b56a4 !important;
+  background-color: transparent !important;
+}
+
+button.cta:hover {
+  background-color: #0b56a4 !important;
+  color: white !important;
+  transition: 0.5s !important;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+#header_mobile {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/landing/landingImg.jpg");
+  position: relative;
+}
+
+#landscaping_mobile {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/landscaping/placeholder.png");
+  position: relative;
+}
+
+#lotsweeping_mobile {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/lotSweeping/placeholder.png");
+  position: relative;
+}
+
+#snow_mobile {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/snow/placeholder.png");
+  position: relative;
+}
+
+.small-header {
+  width: 100vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  /* height: 20vh; */
+}
+
+.small-header.small {
+  height: 25vh;
+}
+
+.small-header.xl {
+  height: 25vh;
+}
+
+.small-header.medium {
+  height: 30vh;
+}
+
+.small-header.large {
+  height: 35vh;
+}
+.small-header.medical {
+  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/medical.png");
+}
+.small-header.school {
+  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/school.png");
+}
+.small-header.data {
+  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/data.png");
+}
+.small-header.college {
+  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/college.png");
+}
+.small-header.warehouse {
+  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/warehouse.png");
+}
+.small-header.offices {
+  background-image: url("./newSrc2/assets/janitorial/facilityTemplate/offices.png");
+}
+
+.small-header.commercial-janitorial {
+  background-image: url("./newSrc2/assets/janitorial/services/commercial.png");
+}
+.small-header.window {
+  background-image: url("./newSrc2/assets/janitorial/services/window.png");
+}
+.small-header.dusting {
+  background-image: url("./newSrc2/assets/janitorial/services/dusting.png");
+}
+.small-header.porter {
+  background-image: url("./newSrc2/assets/janitorial/services/porter.png");
+}
+.small-header.restroom {
+  background-image: url("./newSrc2/assets/janitorial/services/restroom.png");
+}
+.small-header.disinfecting {
+  background-image: url("./newSrc2/assets/janitorial/services/disinfecting.png");
+}
+
+.small-header.carpet {
+  background-image: url("./newSrc2/assets/janitorial/services/carpet.png");
+}
+.small-header.floor {
+  background-image: url("./newSrc2/assets/janitorial/services/floor.png");
+}
+.small-header.recycling {
+  background-image: url("./newSrc2/assets/janitorial/services/recycling.png");
+}
+.small-header.pressure {
+  background-image: url("./newSrc2/assets/janitorial/services/pressure.png");
+}
+
+.small-header.locations {
+  background-color: #05182b;
+}
+
+.small-header.weather {
+  background-color: #05182b;
+}
+
+.small-header.contact {
+  background-color: #05182b;
+}
+
+.small-header.about {
+  background-image: url("./newSrc2/assets/about/header.png");
+}
+
+.small-header.core {
+  background-image: url("./newSrc2/assets/corevalues/header.png");
+}
+
+.small-header.privacy {
+  background-color: #1d1d1f;
+}
+
+.small-header.leadership {
+  background-image: url("./newSrc2/assets/leadership/header.png");
+}
+
+.redesign-service-card {
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 30vh;
+  /* padding: 10vh 0 10vh 0; */
+  /* position: relative; */
+  z-index: 1;
+}
+
+.contact-bg {
+  width: 100%;
+  height: calc(90vh - 48px);
+  background-size: cover;
+  background-position: center center;
+  background-image: url("./images/commercial/asphalt3.jpg");
+}
+.contact-bg.xl {
+  width: 100%;
+  height: calc(90vh - 48px);
+  background-size: cover;
+  background-position: center center;
+  background-image: url("./images/commercial/asphalt3.jpg");
+}
+
+.redesign {
+  width: 100vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.redesign.snow {
+  background-image: url("./newSrc2/assets/services/snow.png");
+}
+
+.redesign.corevalues {
+  background-image: url("./newSrc2/assets/about/corevalues.png");
+}
+.redesign.leadership {
+  background-image: url("./newSrc2/assets/about/leadership.png");
+}
+.redesign.givesback {
+  background-image: url("./newSrc2/assets/about/givesback.png");
+}
+.redesign.careers {
+  background-image: url("./newSrc2/assets/about/careers.png");
+}
+
+.redesign.asphalt {
+  background-image: url("./newSrc2/assets/services/asphalt.png");
+}
+.redesign.concrete {
+  background-image: url("./newSrc2/assets/services/concrete.png");
+}
+
+.redesign.recurring {
+  background-image: url("./newSrc2/assets/services/recurring.png");
+}
+.redesign.roofing {
+  background-image: url("./newSrc2/assets/services/roofing.png");
+}
+.redesign.capex {
+  background-image: url("./newSrc2/assets/services/capex.png");
+}
+.redesign.evchargers {
+  background-image: url("./newSrc2/assets/services/ev.png");
+}
+.redesign.painting {
+  background-image: url("./newSrc2/assets/services/painting.png");
+}
+
+.redesign.landscaping {
+  background-image: url("./newSrc2/assets/services/landscaping.png");
+}
+.redesign.lotsweeping {
+  background-image: url("./newSrc2/assets/services/lotsweeping.png");
+}
+.redesign.janitorial {
+  background-image: url("./newSrc2/assets/services/janitorial.png");
+}
+
+#solutions_small {
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/landing/solutions.png");
+  position: relative;
+  z-index: 1;
+}
+
+#solutions_xl {
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  padding: 20vh 0 30vh 0;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/landing/solutions.png");
+  position: relative;
+  z-index: 1;
+}
+
+#solutions_large {
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  padding: 35vh 0 35vh 0;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/landing/solutions.png");
+  position: relative;
+  z-index: 1;
+}
+
+#solutions_medium {
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  padding: 50vh 0 50vh 0;
+  top: 0;
+  left: 0;
+  background-image: url("./newSrc2/assets/landing/solutions.png");
+  position: relative;
+  z-index: 1;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 4;
+}
+
+.careers-overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100% + 112px);
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 4;
+}
+
+.overlay.industry-overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 4;
+}
+
+.fade-in-overlay {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0);
+  color: rgb(209, 209, 209);
+  text-align: center;
+  opacity: 0%;
+}
+
+.fade-in-overlay:hover {
+  animation: fadeIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+
+/* .overlay.industry-overlay-small {
+  top: 48px;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  z-index: 4;
+} */
+
+.overlay.service-overlay {
+  height: 100% !important;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.section-header {
+  font-family: "Raleway", sans-serif;
+  color: #0b56a4;
+  letter-spacing: 0.06em;
+  line-height: 1.2em;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+  font-size: clamp(25px, 2vw, 28px);
+}
+
+.section-subheader {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.62em !important;
+  letter-spacing: 0.1em;
+}
+
+.next-section {
+  width: 75px;
+  height: 60px;
+}
+
+.section-p {
+  line-height: 1.6em;
+  font-family: "Roboto";
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  font-size: 15px;
+}
+
+.left-input,
+.right-input {
+  width: 48%;
+}
+
+.right-input {
+  margin-left: 4%;
+}
+
+img.lg-screen-hide {
+  display: block;
+}
+
+.charity-wrapper {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  margin-top: 80px;
+}
+
+.charity-wrapper .wrapper {
+  width: 93%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.charity-wrapper h1 {
+  font-family: "Raleway", sans-serif;
+  color: #0b56a4;
+  letter-spacing: 0.05em;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 410px) {
+  a.cta {
+    padding: 4px 20px 2px 20px;
+  }
+  button.cta {
+    padding: 4px 20px 2px 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  a.cta {
+    padding: 4px 25px 2px 25px;
+  }
+  button.cta {
+    padding: 4px 25px 2px 25px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .section-p {
+    line-height: 1.4em;
+  }
+  .section-header {
+    margin-top: 0rem !important;
+  }
+  /* .dees-container img {
+    padding-left: 4rem;
+  } */
+  .left-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .right-text {
+    padding-right: 3rem;
+  }
+  a.cta {
+    padding: 3px 5px 2px 5px;
+  }
+  button.cta {
+    padding: 4px 5px 2px 5px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .section-p {
+    line-height: 1.6em;
+    font-size: 16px;
+  }
+  .section-header {
+    margin-top: 1rem !important;
+  }
+  a.cta {
+    padding: 4px 25px 2px 25px;
+  }
+  button.cta {
+    padding: 4px 25px 2px 25px;
+  }
+  .header-text.franchise-header .header-subtext {
+    font-size: 0.4em;
+  }
+}
