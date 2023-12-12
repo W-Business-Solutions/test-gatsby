@@ -165,7 +165,7 @@ function ContactForm({ service, page }) {
           hubspotContact,
           {
             headers: {
-              Authorization: `Bearer pat-na1-cfcdc14b-3967-45cf-94f8-48b6cbf407d9`,
+              Authorization: `Bearer ${process.env.GATSBY_APP_HUBSPOT_KEY}`,
             },
           }
         )

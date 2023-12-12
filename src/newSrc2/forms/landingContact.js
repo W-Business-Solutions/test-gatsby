@@ -212,7 +212,7 @@ function LandingContact() {
           hubspotContact,
           {
             headers: {
-              Authorization: `Bearer pat-na1-cfcdc14b-3967-45cf-94f8-48b6cbf407d9`,
+              Authorization: `Bearer ${process.env.GATSBY_APP_HUBSPOT_KEY}`,
             },
           }
         )
@@ -227,7 +227,7 @@ function LandingContact() {
     // // sales test account
     // axios.post(`https://my-tb-cors.herokuapp.com/https://api.hsforms.com/submissions/v3/integration/secure/submit/39710783/cdfc9932-77c7-4b17-957c-03d9f80aec8a`, hubspotContact, {
     //     headers: {
-    //         Authorization: `Bearer pat-na1-94226ec6-355b-471b-91e5-0bfa0583565b`
+    // Authorization: `Bearer ${process.env.GATSBY_APP_HUBSPOT_KEY}`,
     //     }
     // }).then(res => {
     //     console.log(res)

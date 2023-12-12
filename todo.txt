@@ -1,3 +1,2 @@
-- hide hubspot api key
 - add in the contact pages
 - 
