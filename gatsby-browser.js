@@ -4,5 +4,7 @@ import ScreenSizeContextWrapper from "./src/contextWrappers/screenSizeContext";
 import("./src/styles/global.css");
 
 export const wrapRootElement = ({ element }) => (
-  <ThemeContext>{element}</ThemeContext>
+  <ScreenSizeContextWrapper>
+    <ThemeContext>{element}</ThemeContext>
+  </ScreenSizeContextWrapper>
 );
