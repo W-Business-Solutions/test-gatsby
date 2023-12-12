@@ -19,6 +19,7 @@
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.14.20",
     "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
     "emailjs-com": "^3.2.0",
     "gatsby": "^5.12.11",
     "gatsby-omni-font-loader": "^2.0.2",

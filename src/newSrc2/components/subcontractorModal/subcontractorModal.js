@@ -76,7 +76,7 @@ function SubcontractorModal({ open, setOpen }) {
         "service_gekurtf",
         templateId, //CONTACT TEMPLATE
         contactForm,
-        process.env.REACT_APP_REACTJS_USER
+        process.env.GATSBY_APP_REACTJS_USER
       );
       setOpen(false);
       setContactForm({});
