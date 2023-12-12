@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 // import { ScreenSizeContext } from "../../src/App.js";
 import headerImg from "../newSrc2/assets/everett/header.png";
 import mobileHeader from "../newSrc2/assets/everett/mobileHeader.png";
@@ -71,7 +71,7 @@ function Everett() {
   const StyledHeaderBody = styled(Typography)(({ theme }) => ({
     color: "white",
     fontFamily: "Inter",
-    maxWidth: "90%",
+    // maxWidth: "90%",
     margin: "0 auto",
     fontSize: screenSize === "xl" ? "16px" : "14px",
     maxWidth: "570px",
@@ -112,6 +112,7 @@ function Everett() {
         }}
       >
         <img
+          alt=""
           src={screenSize === "small" ? mobileHeader : headerImg}
           style={{
             width: "100vw",

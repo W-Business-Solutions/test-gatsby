@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material";
 import { ThemeProvider, responsiveFontSizes } from "@mui/material/styles";
 
 function ThemeContext({ children }) {
-  const fontTheme = createTheme();
+  let fontTheme = createTheme();
   fontTheme = responsiveFontSizes(fontTheme);
   const interTheme = createTheme({
     root: {
