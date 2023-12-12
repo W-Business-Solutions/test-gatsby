@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import centeredStyle from "../newSrc2/styles/centeredStyle";
 // import { ScreenSizeContext } from "../../src/App.js";
+import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
 import StyledButton from "../newSrc2/components/styledButton/styledButton";
 import { Helmet } from "react-helmet-async";
 import { navigate } from "gatsby";
@@ -57,9 +58,8 @@ const ImageComp = ({ img, title, href }) => {
 };
 
 function Locations() {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const [locations, setLocations] = useState([]);
   useEffect(() => {

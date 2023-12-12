@@ -1,8 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { NavigateNext } from "@mui/icons-material";
-// import { useContext } from "react";
+import { useContext } from "react";
 // import { ScreenSizeContext } from "../../src/App.js";
+import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
 import { useState } from "react";
 import centeredStyle from "../newSrc2/styles/centeredStyle";
 import ContactModal from "../newSrc2/components/contactModal/contactModal";
@@ -30,9 +31,8 @@ const bodyStyle = {
 };
 
 function NewAbout() {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const [open, setOpen] = useState(false);
 

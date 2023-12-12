@@ -1,4 +1,4 @@
-import React, { useRef, useState, lazy, Suspense } from "react";
+import React, { useRef, useState, lazy, Suspense, useContext } from "react";
 import { useLocation } from "@reach/router";
 
 // npm packages
@@ -9,6 +9,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import { Button } from "@mui/material";
 import { Helmet } from "react-helmet-async";
+import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
 
 // assets
 import snowIcon from "../newSrc2/assets/Snow Removal.png";
@@ -140,9 +141,8 @@ function Landing() {
   const location = useLocation();
   const pathname = location.pathname;
   const formRef = useRef();
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const [open, setOpen] = useState(pathname === "/contact" ? true : false);
 

@@ -2,7 +2,8 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import StyledButton from "../styledButton/styledButton";
 import centeredStyle from "../../styles/centeredStyle";
-// import { ScreenSizeContext } from "../../../../src/App.js";
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 
 const fontStyle = {
   fontWeight: "bold",
@@ -17,10 +18,9 @@ function ReliabilityCTA({
   smallText,
   largeText,
 }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
 
-  // const { screenSize } = screenSizeContext;
+  const { screenSize } = screenSizeContext;
 
   return (
     <Box

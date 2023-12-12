@@ -9,7 +9,7 @@ import Link from "@mui/material/Link";
 
 import { useRef } from "react";
 // import ContactModal from "../../components/contactModal/contactModal";
-// import { ScreenSizeContext } from "../../../App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 
 import ReliabilityCTA from "../../components/CTA/reliabilityCTA";
 import { styled } from "@mui/material/styles";
@@ -128,9 +128,8 @@ function ParentPageTemplate(props) {
     reviewName,
     reviewImg,
   } = props;
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const ref = useRef();
   const [open, setOpen] = useState(false);

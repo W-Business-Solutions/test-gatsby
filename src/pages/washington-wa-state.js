@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import { ScreenSizeContext } from "../../src/App.js";
+import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
 import headerImg from "../newSrc2/assets/everett/header.png";
 import mobileHeader from "../newSrc2/assets/everett/mobileHeader.png";
 import centeredStyle from "../newSrc2/styles/centeredStyle";
@@ -63,9 +64,9 @@ const services = [
 ];
 
 function Everett() {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
+
   const [open, setOpen] = useState(false);
 
   const StyledHeaderBody = styled(Typography)(({ theme }) => ({

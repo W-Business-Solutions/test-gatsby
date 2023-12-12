@@ -3,6 +3,7 @@ import dees from "../../newSrc2/assets/givesback/dees.png";
 import heed from "../../newSrc2/assets/givesback/heed.png";
 import mission from "../../newSrc2/assets/givesback/mission.png";
 // import { ScreenSizeContext } from "../App.js";
+import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
 import { Helmet } from "react-helmet-async";
 import hlc from "../../newSrc2/assets/givesback/hlc.png";
 import hope from "../../newSrc2/assets/givesback/hope.png";
@@ -146,10 +147,8 @@ const RightText = ({ text, link, children, video }) => {
 };
 
 function GivesBack() {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
-
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
   const [open, setOpen] = useState(false);
 
   const imageStyle = {

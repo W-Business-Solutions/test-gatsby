@@ -6,11 +6,12 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
+import { useContext } from "react";
 
 const LinkComp = ({ img, href, title }) => {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   return (
     <Grid item xs={12} lg={4}>

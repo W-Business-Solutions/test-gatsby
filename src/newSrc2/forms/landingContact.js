@@ -9,6 +9,7 @@ import { TaskAlt } from "@mui/icons-material";
 import Captcha from "../../components/captcha/captcha";
 import centeredStyle from "../styles/centeredStyle";
 import StyledButton from "../components/styledButton/styledButton";
+import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
 
 const arr = [
   {
@@ -76,9 +77,8 @@ function ColorlibStepIcon(props) {
 }
 
 function LandingContact() {
-  // const { screenSize } = useContext(ScreenSizeContext);
-  // console.log(screenSize);
-  const screenSize = "xl";
+  const { screenSize } = useContext(ScreenSizeContext);
+  console.log(screenSize);
 
   const [activeStep, setActiveStep] = useState(0);
   const [contactForm, setContactForm] = useState({

@@ -5,14 +5,13 @@ import React from "react";
 import philanthropy from "../../assets/janitorial/awards/philanthropy.png";
 import minority from "../../assets/janitorial/awards/minority.png";
 import torch from "../../assets/janitorial/awards/torch.png";
-// import { useContext } from "react";
-// import {ScreenSizeContext} from '../../../../src/App.js'
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 
 function Awards({ page }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
-  const screenSize = "xl";
   return (
     <Grid
       container

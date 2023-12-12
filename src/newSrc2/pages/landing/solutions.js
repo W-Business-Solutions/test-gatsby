@@ -5,11 +5,11 @@ import StyledButton from "../../components/styledButton/styledButton";
 import centeredStyle from "../../styles/centeredStyle";
 import { useContext } from "react";
 // import { ScreenSizeContext } from "../../../../src/App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 
 function Solutions({ setOpen }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   return (
     <div id={`solutions_${screenSize}`}>

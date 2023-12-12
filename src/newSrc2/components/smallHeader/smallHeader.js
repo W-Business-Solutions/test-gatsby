@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
+
 // import { ScreenSizeContext } from "../../../../src/App.js";
 
 function SmallHeader({ title, page, template, subtitle }) {
-  //   const screenSizeContext = useContext(ScreenSizeContext);
-  //   const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const [mt, setMt] = useState("36px");
 

@@ -9,10 +9,11 @@ import StyledButton from "../styledButton/styledButton";
 import centeredStyle from "../../styles/centeredStyle";
 import { useRef } from "react";
 import { useState, useEffect } from "react";
-// import { ScreenSizeContext } from "../../../App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import SubcontractorModal from "../subcontractorModal/subcontractorModal";
 import { useLocation } from "@reach/router";
 import ReliabilityCTA from "../CTA/reliabilityCTA";
+import { useContext } from "react";
 
 const IconComp = ({ icon, text, title }) => {
   return (
@@ -40,9 +41,8 @@ const IconComp = ({ icon, text, title }) => {
 };
 
 function CareersTemplate(props) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const location = useLocation();
 

@@ -9,8 +9,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useLocation } from "@reach/router";
 
-// import { useContext } from "react";
+import { useContext } from "react";
 // import { ScreenSizeContext } from "../../App.js";
+import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
 import Captcha from "../../components/captcha/captcha";
 import { FormControl, FormControlLabel, Checkbox } from "@mui/material";
 
@@ -46,9 +47,8 @@ const errorStyle = {
 };
 
 function ContactForm({ service, page }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const location = useLocation();
   const pathname = location.pathname;

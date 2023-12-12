@@ -8,7 +8,8 @@ import walmart from "../../assets/landing/walmart.png";
 import wellsfargo from "../../assets/landing/wellsfargo.png";
 import starbucks from "../../assets/landing/starbucks.png";
 import costco from "../../assets/landing/costco.png";
-// import { ScreenSizeContext } from "../../../../src/App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
+import { useContext } from "react";
 
 const images = [
   {
@@ -77,10 +78,8 @@ const ImageComp = ({ image, screenSize }) => {
 };
 
 function Brands({ bgcolor }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   return (
     <Box

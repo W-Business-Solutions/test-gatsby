@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Typography, Stack } from "@mui/material";
-// import { ScreenSizeContext } from "../../../../src/App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import { useLocation } from "@reach/router";
+import { useContext } from "react";
 
 function Review({ img, reviewLine1, reviewLine2, name, title }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const location = useLocation();
   const { pathname } = location;

@@ -1,6 +1,6 @@
 import React from "react";
-// import { useContext } from "react";
-// import { ScreenSizeContext } from "../../../../src/App.js";
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import { useState } from "react";
 // import ContactModal from "../contactModal/contactModal";
 import Typography from "@mui/material/Typography";
@@ -27,9 +27,8 @@ const serviceText = {
 };
 
 function IndustryTemplate(props) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const [open, setOpen] = useState(false);
 

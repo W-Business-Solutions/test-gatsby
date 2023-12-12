@@ -5,11 +5,11 @@ import centeredStyle from "../../styles/centeredStyle";
 import StyledButton from "../../components/styledButton/styledButton";
 import { useContext } from "react";
 // import { ScreenSizeContext } from "../../../../src/App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 
 function Chances({ setOpen }) {
-  //   const screenSizeContext = useContext(ScreenSizeContext);
-  //   const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   return (
     <Box

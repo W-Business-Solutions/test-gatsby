@@ -15,6 +15,7 @@ import centeredStyle from "../../styles/centeredStyle";
 import { useRef } from "react";
 import ContactModal from "../../components/contactModal/contactModal";
 // import { ScreenSizeContext } from "../../../../src/App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useLocation } from "@reach/router";
 import ReliabilityCTA from "../../components/CTA/reliabilityCTA";
@@ -55,9 +56,8 @@ function NewJanitorial(props) {
       );
     }
   }, []);
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const { headerText, services } = props;
   const ref = useRef();

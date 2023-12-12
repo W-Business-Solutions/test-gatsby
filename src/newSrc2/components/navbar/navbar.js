@@ -16,8 +16,8 @@ import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import PhoneEnabled from "@mui/icons-material/PhoneEnabled";
 import MenuIcon from "@mui/icons-material/Menu";
 // import ContactModal from "../contactModal/contactModal";
-// import { useContext } from "react";
-// import { ScreenSizeContext } from "../../../../src/App.js";
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import ServiceBanner from "../serviceBanner/serviceBanner";
 import Services from "./services";
 import About from "./about";
@@ -387,9 +387,8 @@ const MobileNav = () => {
 };
 
 function Navbar({ page }) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   return screenSize === "small" ? <MobileNav /> : <LargeNav page={page} />;
 }

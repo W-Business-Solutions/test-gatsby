@@ -12,7 +12,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import NavigateNext from "@mui/icons-material/NavigateNext";
 import ContactModal from "../contactModal/contactModal";
 import { useState, useContext } from "react";
-// import { ScreenSizeContext } from "../../../App.js";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import ReliabilityCTA from "../CTA/reliabilityCTA";
 import landscapingPlaceholder from "../../assets/landscaping/placeholder.png";
 import snowPlaceholder from "../../assets/snow/placeholder.png";
@@ -52,9 +52,8 @@ const ServiceCard = ({ img, text, alt, screenSize }) => {
 };
 
 function ServicePage(props) {
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const {
     children,

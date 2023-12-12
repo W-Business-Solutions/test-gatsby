@@ -7,6 +7,7 @@ import service3 from "../newSrc2/assets/snow/snow-remote-monitoring-transblue.pn
 import csp from "../newSrc2/assets/snow/csp.png";
 import sima from "../newSrc2/assets/snow/sima.png";
 // import { ScreenSizeContext } from "../../src/App.js";
+import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "@reach/router";
 import { useState, useEffect } from "react";
@@ -17,9 +18,8 @@ import ServicePage from "../newSrc2/components/servicePage/servicePage";
 
 function Snow() {
   const location = useLocation();
-  // const screenSizeContext = useContext(ScreenSizeContext);
-  // const { screenSize } = screenSizeContext;
-  const screenSize = "xl";
+  const screenSizeContext = useContext(ScreenSizeContext);
+  const { screenSize } = screenSizeContext;
 
   const { pathname } = location;
   const [title, setTitle] = useState(
