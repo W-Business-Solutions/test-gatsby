@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import see from "../newSrc2/assets/corevalues/see.png";
-import eachother from "../newSrc2/assets/corevalues/eachother.png";
-import engaged from "../newSrc2/assets/corevalues/engaged.png";
-import grit from "../newSrc2/assets/corevalues/grit.png";
-import help from "../newSrc2/assets/corevalues/help.png";
-import nimble from "../newSrc2/assets/corevalues/nimble.png";
+import see from "../../newSrc2/assets/corevalues/see.png";
+import eachother from "../../newSrc2/assets/corevalues/eachother.png";
+import engaged from "../../newSrc2/assets/corevalues/engaged.png";
+import grit from "../../newSrc2/assets/corevalues/grit.png";
+import help from "../../newSrc2/assets/corevalues/help.png";
+import nimble from "../../newSrc2/assets/corevalues/nimble.png";
 import { navigate } from "gatsby";
 import Navbar from "../../newSrc2/components/navbar/navbar";
 import Footer from "../../newSrc2/components/footer/newFooter";

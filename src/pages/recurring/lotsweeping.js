@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import service1 from "../../../newSrc2/assets/lotSweeping/lotsweeping-lot-sweeper-transblue.png";
-import service2 from "../../../newSrc2/assets/lotSweeping/lotsweeping-sweeped-lot-transblue.png";
-import service3 from "../../../newSrc2/assets/lotSweeping/lotsweeping-lot-washer-transblue.png";
-import header from "../../../newSrc2/assets/lotSweeping/header.png";
-import headerMobile from "../../../newSrc2/assets/lotSweeping/header_mobile.png";
+import service1 from "../../newSrc2/assets/lotSweeping/lotsweeping-lot-sweeper-transblue.png";
+import service2 from "../../newSrc2/assets/lotSweeping/lotsweeping-sweeped-lot-transblue.png";
+import service3 from "../../newSrc2/assets/lotSweeping/lotsweeping-lot-washer-transblue.png";
+import header from "../../newSrc2/assets/lotSweeping/header.png";
+import headerMobile from "../../newSrc2/assets/lotSweeping/header_mobile.png";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "@reach/router";
-import ServicePage from "../../../newSrc2/components/servicePage/servicePage";
+import ServicePage from "../../newSrc2/components/servicePage/servicePage";
 
 function LotSweeping() {
   // const location = useLocation();

@@ -1,13 +1,13 @@
 import React from "react";
-import service1 from "../../../newSrc2/assets/landscaping/landscaping-front-loader-dirt-transblue.png";
-import service2 from "../../../newSrc2/assets/landscaping/landscaping-upkeep-transblue.png";
-import service3 from "../../../newSrc2/assets/landscaping/landscaping-grass-transblue.png";
-import header from "../../../newSrc2/assets/landscaping/header.png";
-import headerMobile from "../../../newSrc2/assets/landscaping/header_mobile.png";
+import service1 from "../../newSrc2/assets/landscaping/landscaping-front-loader-dirt-transblue.png";
+import service2 from "../../newSrc2/assets/landscaping/landscaping-upkeep-transblue.png";
+import service3 from "../../newSrc2/assets/landscaping/landscaping-grass-transblue.png";
+import header from "../../newSrc2/assets/landscaping/header.png";
+import headerMobile from "../../newSrc2/assets/landscaping/header_mobile.png";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "@reach/router";
 import { useEffect, useState } from "react";
-import ServicePage from "../../../newSrc2/components/servicePage/servicePage";
+import ServicePage from "../../newSrc2/components/servicePage/servicePage";
 
 function Landscaping() {
   const location = useLocation();

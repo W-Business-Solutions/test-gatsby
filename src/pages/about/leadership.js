@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 // import { navigate } from "gatsby";
-import Leadership from "../newSrc2/components/leadership/leadership";
-import Navbar from "../newSrc2/components/navbar/navbar";
-import Footer from "../newSrc2/components/footer/newFooter";
-import ContactModal from "../newSrc2/components/contactModal/contactModal";
-import SmallHeader from "../newSrc2/components/smallHeader/smallHeader";
-import CTA from "../newSrc2/components/CTA/reliabilityCTA";
+import Leadership from "../../newSrc2/components/leadership/leadership";
+import Navbar from "../../newSrc2/components/navbar/navbar";
+import Footer from "../../newSrc2/components/footer/newFooter";
+import ContactModal from "../../newSrc2/components/contactModal/contactModal";
+import SmallHeader from "../../newSrc2/components/smallHeader/smallHeader";
+import CTA from "../../newSrc2/components/CTA/reliabilityCTA";
 
 function LeadershipPage() {
   const [open, setOpen] = useState(false);

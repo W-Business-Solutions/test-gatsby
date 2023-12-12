@@ -1,23 +1,23 @@
 import React, { useContext, useState } from "react";
-import dees from "../newSrc2/assets/givesback/dees.png";
-import heed from "../newSrc2/assets/givesback/heed.png";
-import mission from "../newSrc2/assets/givesback/mission.png";
+import dees from "../../newSrc2/assets/givesback/dees.png";
+import heed from "../../newSrc2/assets/givesback/heed.png";
+import mission from "../../newSrc2/assets/givesback/mission.png";
 // import { ScreenSizeContext } from "../App.js";
 import { Helmet } from "react-helmet-async";
-import hlc from "../newSrc2/assets/givesback/hlc.png";
-import hope from "../newSrc2/assets/givesback/hope.png";
-import mbridge from "../newSrc2/assets/givesback/mbridge.png";
-import marked from "../newSrc2/assets/givesback/marked.png";
-import solidrock from "../newSrc2/assets/givesback/solidrock.png";
-import Navbar from "../newSrc2/components/navbar/navbar";
-import Footer from "../newSrc2/components/footer/newFooter";
-import SmallHeader from "../newSrc2/components/smallHeader/smallHeader";
+import hlc from "../../newSrc2/assets/givesback/hlc.png";
+import hope from "../../newSrc2/assets/givesback/hope.png";
+import mbridge from "../../newSrc2/assets/givesback/mbridge.png";
+import marked from "../../newSrc2/assets/givesback/marked.png";
+import solidrock from "../../newSrc2/assets/givesback/solidrock.png";
+import Navbar from "../../newSrc2/components/navbar/navbar";
+import Footer from "../../newSrc2/components/footer/newFooter";
+import SmallHeader from "../../newSrc2/components/smallHeader/smallHeader";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import NavigateNext from "@mui/icons-material/NavigateNext";
-import ContactModal from "../newSrc2/components/contactModal/contactModal";
-import ReliabilityCTA from "../newSrc2/components/CTA/reliabilityCTA";
+import ContactModal from "../../newSrc2/components/contactModal/contactModal";
+import ReliabilityCTA from "../../newSrc2/components/CTA/reliabilityCTA";
 
 const aboutStyle = {
   fontFamily: "Inter",
