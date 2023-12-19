@@ -29,7 +29,7 @@ const categories = [
       },
       {
         title: "Lot Sweeping",
-        href: "/recurring/lot-sweeping",
+        href: "/recurring/lotsweeping",
       },
     ],
   },

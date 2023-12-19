@@ -18,6 +18,11 @@ import landscapingPlaceholder from "../../assets/landscaping/placeholder.png";
 import snowPlaceholder from "../../assets/snow/placeholder.png";
 import lotsweepingPlaceholder from "../../assets/lotSweeping/placeholder.png";
 import { navigate } from "gatsby";
+import WashingtonContact from "../../forms/washingtonContact";
+import modalStyle from "../../styles/modal";
+import Modal from "@mui/material/Modal";
+import IconButton from "@mui/material/IconButton";
+import Clear from "@mui/icons-material/Clear";
 
 const ServiceCard = ({ img, text, alt, screenSize }) => {
   return (
@@ -103,7 +108,27 @@ function ServicePage(props) {
 
   return (
     <>
-      <ContactModal open={open} setOpen={setOpen} />
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Box
+          sx={{
+            ...modalStyle,
+            textAlign: "center",
+            borderRadius: "10px",
+            maxHeight: "90vh",
+            overflowY: "auto",
+            px: { xs: 2, sm: 3 },
+            pt: { xs: 2, sm: 3 },
+            pb: 3,
+          }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <IconButton onClick={() => setOpen(false)} color="error">
+              <Clear />
+            </IconButton>
+          </Box>
+          <WashingtonContact />
+        </Box>
+      </Modal>
       <Navbar page="service" services={services} />
       <Box className="overlay" />
       {(headerText === "Landscaping" ||

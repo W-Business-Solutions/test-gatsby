@@ -181,24 +181,24 @@ function Washington() {
           mt: "36px",
         }}
       >
-        {(screenSize === "medium" ||
-          screenSize === "large" ||
-          screenSize === "xl") && (
+        {screenSize !== "small" && (
           <video autoPlay loop muted preload="none">
             <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
           </video>
         )}
-        <img
-          src={mobileHeader}
-          style={{
-            width: "100vw",
-            height: "100%",
-            objectFit: "cover",
-            right: 0,
-            top: 0,
-            zIndex: -1,
-          }}
-        />
+        {screenSize === "small" && (
+          <img
+            src={mobileHeader}
+            style={{
+              width: "100vw",
+              height: "100%",
+              objectFit: "cover",
+              right: 0,
+              top: 0,
+              zIndex: -1,
+            }}
+          />
+        )}
         {(screenSize === "large" || screenSize === "xl") && (
           <Box
             sx={{
