@@ -4,4 +4,3 @@
 - add in janitorial page
 - replace contact forms with washington contact forms
 - replace header image on washington page with landing page video
-- remove underline from footer nav links

@@ -181,8 +181,15 @@ function Washington() {
           mt: "36px",
         }}
       >
+        {(screenSize === "medium" ||
+          screenSize === "large" ||
+          screenSize === "xl") && (
+          <video autoPlay loop muted preload="none">
+            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
+          </video>
+        )}
         <img
-          src={screenSize === "small" ? mobileHeader : headerImg}
+          src={mobileHeader}
           style={{
             width: "100vw",
             height: "100%",
