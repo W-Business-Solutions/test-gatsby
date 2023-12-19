@@ -97,6 +97,7 @@ function Footer() {
               color: "white",
               lineHeight: "normal",
               fontFamily: "Inter",
+              textDecoration: "none",
             }}
             href={link.href}
           >
