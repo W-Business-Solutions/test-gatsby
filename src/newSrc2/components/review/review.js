@@ -15,9 +15,9 @@ function Review({ img, reviewLine1, reviewLine2, name, title }) {
     <>
       <Box
         sx={{
-          width: "100vw",
+          maxWidth: "100vw",
           bgcolor: "rgba(217, 217, 217, 1)",
-          px: { xs: "10vw", lg: "15vw", xl: "20vw" },
+          px: { xs: "10vw", lg: "5vw", xl: "20vw" },
           pb: { xs: "5vh", md: "10vh", lg: "15vh", xl: "5vh" },
           pt: {
             xs: "5vh",

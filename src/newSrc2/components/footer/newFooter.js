@@ -80,31 +80,6 @@ function Footer() {
     });
   };
 
-  // const ButtonComp = ({ title, href }) => {
-  //   return (
-  //     <>
-  //       <StyledButton
-  //         sx={{
-  //           color: "#D2D2D7",
-  //           pl: 0,
-  //           fontSize: "14px",
-  //           fontWeight: 300,
-  //         }}
-  //         component="a"
-  //         onClick={() => navigate(href)}
-  //       >
-  //         {title}
-  //       </StyledButton>
-  //       <br />
-  //     </>
-  //   );
-  // };
-
-  // const StyledLink = styled(Typography)(({ theme }) => ({
-  //   color: "white",
-  //   lineHeight: "normal",
-  // }));
-
   const StyledHeader = styled(Typography)(({ theme }) => ({
     color: "white",
     fontSize: "16px",

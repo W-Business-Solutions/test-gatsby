@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-// import { ScreenSizeContext } from "../../src/App.js";
+import React, { useContext, useState, useRef } from "react";
 import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
 import headerImg from "../newSrc2/assets/everett/header.png";
 import mobileHeader from "../newSrc2/assets/everett/mobileHeader.png";
@@ -8,18 +7,23 @@ import styled from "@emotion/styled";
 import review from "../newSrc2/assets/everett/review.png";
 import arrow from "../newSrc2/assets/everett/arrow.png";
 import { Helmet } from "react-helmet-async";
-import Navbar from "../newSrc2/components/navbar/navbar";
-import Footer from "../newSrc2/components/footer/newFooter";
+import Brands from "../newSrc2/components/brands/brands";
+import WashingtonContact from "../newSrc2/forms/washingtonContact";
+import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import Navbar from "../newSrc2/components/navbar/navbar";
+import IconButton from "@mui/material/IconButton";
+import Clear from "@mui/icons-material/Clear";
+import NavigateNext from "@mui/icons-material/NavigateNext";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import ContactForm from "../newSrc2/forms/contact";
 import ServiceComp from "../newSrc2/components/serviceComp/serviceComp";
 import Review from "../newSrc2/components/review/review";
-import ContactModal from "../newSrc2/components/contactModal/contactModal";
 import ReliabilityCTA from "../newSrc2/components/CTA/reliabilityCTA";
-import PartnerBanner from "../newSrc2/components/partnerBanner/partnerBanner";
+import Footer from "../newSrc2/components/footer/newFooter";
+import modalStyle from "../newSrc2/styles/modal";
 
 const StyledHeaderText = styled(Typography)(({ theme }) => ({
   color: "white",
@@ -56,35 +60,34 @@ const services = [
   },
   {
     img: arrow,
-    title: "Lot Sweeping",
+    title: "Parking Lot Sweeping",
     description:
       "Welcome your team and customers each morning to a spotless parking lot as our crew efficiently sweeps away yesterday's dust, debris, and dirt.",
-    href: "/recurring/lot-sweeping",
+    href: "/recurring/lotsweeping",
   },
 ];
 
-function Everett() {
+function Washington() {
   const screenSizeContext = useContext(ScreenSizeContext);
   const { screenSize } = screenSizeContext;
-
   const [open, setOpen] = useState(false);
+  const formRef = useRef(null);
 
   const StyledHeaderBody = styled(Typography)(({ theme }) => ({
     color: "white",
     fontFamily: "Inter",
-    // maxWidth: "90%",
     margin: "0 auto",
-    fontSize: screenSize === "xl" ? "16px" : "14px",
-    maxWidth: "570px",
+    width: "90vw",
+    fontSize: screenSize === "xl" || screenSize === "small" ? "16px" : "14px",
+    maxWidth: "430px",
   }));
 
-  const VideoComp = ({ src }) => (
+  const VideoComp = ({ src, title }) => (
     <iframe
       src={src}
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
+      title={title}
+      frameBorder="0"
+      allowFullScreen
       style={{
         minHeight: "100%",
         minWidth: "100%",
@@ -95,25 +98,90 @@ function Everett() {
     ></iframe>
   );
 
+  const StyledButton = styled(Button)(({ theme }) => ({
+    backgroundColor: "white",
+    borderRadius: "30px",
+    width: "160px",
+    color: "black",
+    fontWeight: 500,
+    height: "37px",
+    border: "2px solid white",
+    marginTop: "24px",
+    textTransform: "capitalize",
+  }));
+
+  const StyledLocationTypography = styled(Typography)(({ theme }) => ({
+    lineHeight: "normal",
+  }));
+
+  const LocationColumn = ({ locations, display, fontWeight }) => {
+    return (
+      <Box sx={{ display: display, fontWeight: fontWeight || 400 }}>
+        {locations.map((location) => (
+          <StyledLocationTypography
+            key={location}
+            sx={{ fontWeight: fontWeight || 400 }}
+          >
+            {location}
+          </StyledLocationTypography>
+        ))}
+      </Box>
+    );
+  };
+
+  const handleScroll = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: formRef.current.offsetTop,
+    });
+  };
+
   return (
     <>
-      <ContactModal open={open} setOpen={setOpen} />
       <Helmet>
-        <title></title>
-        <meta name="description" content="noindex" />
+        <title>Washington State | Transblue Facility Management</title>
+        <meta
+          name="description"
+          content="Transblue's facility management services is serving your local area near you along with everyone else across Washington state"
+        />
       </Helmet>
-      <Navbar />
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Box
+          sx={{
+            ...modalStyle,
+            textAlign: "center",
+            borderRadius: "10px",
+            maxHeight: "90vh",
+            overflowY: "auto",
+            px: { xs: 2, sm: 3 },
+            pt: { xs: 2, sm: 3 },
+            pb: 3,
+          }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <IconButton onClick={() => setOpen(false)} color="error">
+              <Clear />
+            </IconButton>
+          </Box>
+          <WashingtonContact />
+        </Box>
+      </Modal>
+      <Navbar page="washington" />
 
       <Box
         sx={{
           position: "relative",
           width: "100vw",
-          height: screenSize === "xl" ? "70vh" : "90vh",
+          height:
+            screenSize === "xl"
+              ? "80vh"
+              : screenSize === "small"
+              ? "80vh"
+              : "90vh",
           mt: "36px",
         }}
       >
         <img
-          alt=""
           src={screenSize === "small" ? mobileHeader : headerImg}
           style={{
             width: "100vw",
@@ -128,7 +196,7 @@ function Everett() {
           <Box
             sx={{
               position: "absolute",
-              top: "50%",
+              top: "calc(50% + 36px)",
               left: "50%",
               transform: "translate(-50%, -50%)",
               zIndex: 5,
@@ -146,18 +214,22 @@ function Everett() {
                   }}
                 >
                   <StyledHeaderText variant="h4">
-                    Everett's Own Commercial
+                    Your Local Facility
                   </StyledHeaderText>
                   <StyledHeaderText variant="h4">
-                    Facility Services Provider
+                    Management Neighbors
                   </StyledHeaderText>
                 </Box>
+                <StyledHeaderBody sx={{ pb: 3 }}>
+                  Your facility management needs meets the Transblue excellence!
+                  Specializing in snow removal, janitorial, landscaping, and
+                  asphalt/lot sweeping services, we always want to ensure that
+                  your commercial/industrial property always looks its best!
+                </StyledHeaderBody>
                 <StyledHeaderBody>
-                  Anticipate and secure your facility's success in Everett, WA,
-                  and Snohomish County with our comprehensive facility services.
-                  We focus on snow removal, janitorial, landscaping, and parking
-                  lot services that ensure your business has every potential
-                  problem covered by Transblue.
+                  Not just local? No problem! Transblue’s diverse network of
+                  contractors makes it so you only have to deal with us, we’ll
+                  handle the rest.
                 </StyledHeaderBody>
               </Grid>
               <Grid item xs={6} textAlign="center" my="auto">
@@ -165,9 +237,17 @@ function Everett() {
                   sx={{
                     maxWidth: "575px",
                     m: "0 auto",
+                    bgcolor: "white",
+                    width: "100%",
+                    boxShadow: { xs: 0, lg: 24 },
+                    py: 2,
+                    px: { xs: 3, md: 2, lg: 3, xl: 5 },
+                    borderRadius: "5px",
+                    maxHeight: { xs: "100%", md: "90vh" },
+                    overflowY: "auto",
                   }}
                 >
-                  <ContactForm page="everett" />
+                  <WashingtonContact />
                 </Box>
               </Grid>
             </Grid>
@@ -178,63 +258,81 @@ function Everett() {
             sx={{
               color: "white",
               ...centeredStyle,
-              width: "90vw",
-              top: "calc(50% + 36px)",
+              width: "95vw",
+              top: "calc(50%)",
             }}
           >
-            <StyledHeaderText variant="h3">
-              Everett's Own Commercial
+            <StyledHeaderText sx={{ fontSize: "1.8rem" }}>
+              Your Local Facility
             </StyledHeaderText>
-            <StyledHeaderText variant="h3">
-              Facility Services Provider
+            <StyledHeaderText sx={{ fontSize: "1.8rem", mb: 3 }}>
+              Management Neighbors
             </StyledHeaderText>
-            <Stack
-              direction="row"
-              spacing={5}
-              sx={{ justifyContent: "center", mt: 7 }}
-            ></Stack>
+            <StyledHeaderBody sx={{ pb: 3 }}>
+              Your facility management needs meets the Transblue excellence!
+              Specializing in snow removal, janitorial, landscaping, and
+              asphalt/lot sweeping services, we always want to ensure that your
+              commercial/industrial property always looks its best!
+            </StyledHeaderBody>
+            <StyledHeaderBody>
+              Not just local? No problem! Transblue’s diverse network of
+              contractors makes it so you only have to deal with us, we’ll
+              handle the rest.
+            </StyledHeaderBody>
+            <StyledButton variant="contained" onClick={() => setOpen(true)}>
+              get started <NavigateNext sx={{ fontSize: "16px" }} />
+            </StyledButton>
           </Box>
         )}
       </Box>
 
-      <PartnerBanner images={["getplowed", "silvertips"]} />
+      {screenSize === "small" && (
+        <Box sx={{ width: "95vw", ml: "3vw" }}>
+          <br />
+          <WashingtonContact />
+        </Box>
+      )}
 
       <Stack
-        direction={{ xs: "column", lg: "row" }}
+        direction={{ xs: "column", md: "row" }}
         width={{ xs: "90vw", lg: "80vw", xl: "54vw" }}
         ml={{ xs: "5vw", lg: "10vw", xl: "23vw" }}
         py={{ xs: "5vh", lg: "10vh", xl: "8vh" }}
         spacing={6}
         alignItems={"center"}
       >
-        <Box sx={{ width: { xs: "100%", lg: "46%" } }}>
+        <Box sx={{ width: { xs: "100%", md: "46%" } }}>
           <StyledParagraph sx={{ mb: 3 }}>
-            Hello Everett! Your new neighbor just landed next door! From our old
-            home in Monroe, now in Everett right off of Pacific and Rucker.
+            First out of Monroe and now located in our new home of Everett,
+            we’re now strategically placed to better to serve all our customers
+            from Olympia to Arlington.
           </StyledParagraph>
           <StyledParagraph>
-            As we grow our business in the Everett area, we’ve already begun
-            living out our corporate mission: Change the World! Check out this
-            video for some context on why we do, what we do.
+            As we grow our business throughout the Puget Sound, we’ve already
+            begun living out our corporate mission: Change the World! Check out
+            this video for context on why we do, what we do.
           </StyledParagraph>
         </Box>
-        <Box sx={{ width: { xs: "100%", lg: "53%" } }}>
-          <VideoComp src="https://www.youtube.com/embed/CDC2_LH7xx0?si=DHfsK8ujwLIPE6OW" />
+        <Box sx={{ width: { xs: "100%", md: "53%" } }}>
+          <VideoComp
+            src="https://www.youtube-nocookie.com/embed/CDC2_LH7xx0?vq=hd1080&modestbranding=1&rel=0&controls=0"
+            title="Transblue Gives Back"
+          />
         </Box>
       </Stack>
 
       <Stack
-        direction={{ xs: "column", lg: "row" }}
+        direction={{ xs: "column-reverse", md: "row" }}
         width={{ xs: "90vw", lg: "80vw", xl: "54vw" }}
         ml={{ xs: "5vw", lg: "10vw", xl: "23vw" }}
         pb={{ xs: "5vh", lg: "10vh", xl: "8vh" }}
         spacing={6}
         alignItems={"center"}
       >
-        <Box sx={{ width: { xs: "100%", lg: "55%" } }}>
-          <VideoComp src="https://www.youtube.com/embed/DRhsP_74peQ?si=JcQhszvuGQbT6GKf" />
+        <Box sx={{ width: { xs: "100%", md: "55%" } }}>
+          <VideoComp src="https://www.youtube-nocookie.com/embed/DRhsP_74peQ?vq=hd1080&modestbranding=1&rel=0&controls=0" />
         </Box>
-        <Box sx={{ width: { xs: "100%", lg: "46%" } }}>
+        <Box sx={{ width: { xs: "100%", md: "46%" } }}>
           <StyledParagraph sx={{ mb: 3 }}>
             Our journey began in 2004 as a landscape-oriented general
             contractor. Recognizing the unmet needs of our clients, we quickly
@@ -242,9 +340,9 @@ function Everett() {
             just two years.
           </StyledParagraph>
           <StyledParagraph>
-            Today, we continue our growth, focusing on nationwide scale and
-            specialized expertise in essential areas, such as snow removal,
-            janitorial work, landscaping, and parking lot services.
+            Today, we continue our growth, focusing on the local and nationwide
+            scale and specialized expertise in essential areas, such as snow
+            removal, janitorial work, landscaping, and parking lot services.
           </StyledParagraph>
         </Box>
       </Stack>
@@ -252,8 +350,8 @@ function Everett() {
       <Grid
         container
         sx={{
-          width: { xs: "90vw", lg: "70vw", xl: "60vw" },
-          ml: { xs: "5vw", lg: "15vw", xl: "20vw" },
+          width: { xs: "90vw", lg: "80vw", xl: "60vw" },
+          ml: { xs: "5vw", lg: "10vw", xl: "20vw" },
           pb: { xs: "10vh", md: "20vh", lg: "15vh", xl: "10vh" },
         }}
         spacing={{ xs: 1, md: 3, xl: 5 }}
@@ -292,6 +390,7 @@ function Everett() {
           </Grid>
         ))}
       </Grid>
+      <Brands bgcolor="#05182B" />
 
       <Review
         reviewLine1="As a satisfied customer, I 100 percent recommend Transblue. FOUR Reasons WHY you too should use Transblue: 1) Dependable, 2) Awesome, 3) Virtuous, and 4) Extraordinary. "
@@ -321,4 +420,4 @@ function Everett() {
   );
 }
 
-export default Everett;
+export default Washington;
