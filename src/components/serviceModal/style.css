@@ -1,11 +1,11 @@
 .service-modal-wrapper .modal {
-    padding-right: 0px !important;
+  padding-right: 0px !important;
 }
 
 .service-modal-wrapper .modal-content {
-    border-radius: 0px;
-    padding: 10px 40px 40px 40px;
-    margin: 0 auto;
+  border-radius: 0px;
+  padding: 10px 40px 40px 40px;
+  margin: 0 auto;
 }
 
 /* button, .button, input[type="submit"], .a8c-posts-list__view-all, button[data-load-more-btn] {
@@ -13,47 +13,47 @@
 } */
 
 .service-modal-wrapper .modal-open .modal {
-    height: 600px;
+  height: 600px;
 }
 
 .service-modal-wrapper .modal-dialog {
-    max-width: 350px !important;
-    margin: 0 auto;
+  max-width: 350px !important;
+  margin: 0 auto;
 }
 
 .service-modal-wrapper h6 {
-    font-family: 'Raleway', sans-serif;
-    margin-top: 30px;
+  font-family: "Inter", sans-serif;
+  margin-top: 30px;
 }
 
 .service-modal-wrapper .modal-content .service-form .section-p {
-    font-size: .9em;
+  font-size: 0.9em;
 }
 
 .service-modal-wrapper .close {
-    position: absolute;
-    top: 5px;
-    right: 12px;
-    font-weight: 300;
-    font-size: 2rem;
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  font-weight: 300;
+  font-size: 2rem;
 }
 
-.service-modal-wrapper .residential{
-    display: none;
-    border: 1px solid red;
+.service-modal-wrapper .residential {
+  display: none;
+  border: 1px solid red;
 }
 
 @media only screen and (min-width: 576px) {
-    .service-modal-wrapper .modal-dialog {
-        max-width: 550px !important;;
-    }
-    .service-modal-wrapper #resServiceModal .modal-dialog {
-        max-width: 550px !important;
-    }
+  .service-modal-wrapper .modal-dialog {
+    max-width: 550px !important;
+  }
+  .service-modal-wrapper #resServiceModal .modal-dialog {
+    max-width: 550px !important;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .service-modal-wrapper .modal-dialog {
-        max-width: 800px !important;
-    }
+  .service-modal-wrapper .modal-dialog {
+    max-width: 800px !important;
+  }
 }

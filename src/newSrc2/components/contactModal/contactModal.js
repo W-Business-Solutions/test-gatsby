@@ -65,7 +65,7 @@ function ContactModal({ open, setOpen, page }) {
     // service: page === "givesback" ? "mBridge partnership" : "",
     numLocations: 1,
     slug: pathname === "/" ? "Home Page" : pathname,
-    sms: true,
+    sms: false,
   });
 
   const [errors, setErrors] = useState({

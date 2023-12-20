@@ -58,7 +58,7 @@ function ContactForm({ service, page }) {
   const [contactForm, setContactForm] = useState({
     numLocations: 1,
     slug: pathname === "/" ? "Home Page" : pathname,
-    sms: true,
+    sms: false,
   });
 
   const [errors, setErrors] = useState({

@@ -3,7 +3,7 @@
     width: 80%;
     margin: 0 auto;
     font-size: 2.5vw;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: normal;
     letter-spacing: .05em;
 }
@@ -17,7 +17,7 @@ fieldset {
 }
 
 fieldset p {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6em;
     letter-spacing: 2.5px;
     font-size: 1em;
@@ -25,41 +25,41 @@ fieldset p {
 
 .franchise-phone a,
 .franchise-email a {
-    background-color: #0b56a4;
-    color: white;
-    padding: 4px 15px 4px 15px;
-    display: inline-block;
-    font-size: .9em;
-    letter-spacing: .0705em;
-    font-family: 'Roboto';
+  background-color: #0b56a4;
+  color: white;
+  padding: 4px 15px 4px 15px;
+  display: inline-block;
+  font-size: 0.9em;
+  letter-spacing: 0.0705em;
+  font-family: "Inter";
 }
 
 .franchise-wrapper .about-container {
-    width: 93%;
+  width: 93%;
 }
 
 .franchise-email {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .franchise-email a {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .franchise-wrapper .about-container .contact {
-    margin: 0px 0px 15px 0px;
+  margin: 0px 0px 15px 0px;
 }
 
 .franchise-wrapper .about-container .contact a {
-    color: white;
-    text-decoration: none !important;
+  color: white;
+  text-decoration: none !important;
 }
 
 .about-container h1 {
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 1.6px;
-    font-size: 2.1em;
-    margin-bottom: 15px;
-    line-height: 1.3em;
-    font-size: clamp(30px, 4vw, 30px)
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1.6px;
+  font-size: 2.1em;
+  margin-bottom: 15px;
+  line-height: 1.3em;
+  font-size: clamp(30px, 4vw, 30px);
 }

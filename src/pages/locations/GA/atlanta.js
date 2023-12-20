@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState, lazy } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../../components/franchiseComponents/header";
 import About from "../../../components/franchiseComponents/about";
-import ServiceCard from "../../../components/franchiseComponents/serviceCard+";
+import ServiceCard from "../../../components/franchiseComponents/serviceCard";
 import Commercial from "../../../components/franchiseComponents/commercial";
 import Multifamily from "../../../components/franchiseComponents/multifamily";
 import Govt from "../../../components/franchiseComponents/govt";
@@ -13,14 +13,15 @@ import Reviews from "../../../components/franchiseComponents/reviews";
 import Contact2 from "../../../components/franchiseComponents/contact2";
 import regionalServices from "../../../components/franchiseComponents/regionalServices";
 import CityZip from "../../../components/franchiseComponents/cityZip";
-import Footer from "../../../components/franchiseComponents/footer";
+import Footer from "../../../newSrc2/components/footer/newFooter";
 import Finance from "../../../components/franchiseComponents/finance";
 import Awards from "../../../components/franchiseComponents/awards";
-import "./style.css";
+import "../../../components/franchiseComponents/style.css";
 import ServiceModal from "../../../components/serviceModal";
 import db from "../../../components/franchiseComponents/reviewDb";
 import Navbar from "../../../newSrc2/components/navbar/navbar";
 import awardsDb from "../../../components/franchiseComponents/awardsDb";
+import { Box } from "@mui/material";
 
 const Map = lazy(() => import("../../../components/franchiseComponents/map"));
 
@@ -134,9 +135,18 @@ function Franchise() {
                       service={services.services[3]}
                     />
                   </div>
-                  <div className="service-modal">
+                  {/* <div className="service-modal">
                     <ServiceModal service="all" snow={displaySnow} />
-                  </div>
+                  </div> */}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      mt: "30px",
+                    }}
+                  >
+                    <ServiceModal service="all" snow={displaySnow} />
+                  </Box>
                 </div>
               )}
             </div>
@@ -148,9 +158,11 @@ function Franchise() {
           {displaySnow && <Snow location={location} />}
 
           <div className="wrapper">
-            <Commercial displaySnow={displaySnow} location={location} />
-            <Govt displaySnow={displaySnow} location={location} />
-            <Green location={location} />
+            <div className="container-fluid">
+              <Commercial displaySnow={displaySnow} location={location} />
+              <Govt displaySnow={displaySnow} location={location} />
+              <Green location={location} />
+            </div>
           </div>
           <div className="wrapper">
             <Professional location={location} />

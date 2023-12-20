@@ -1,0 +1,226 @@
+.contact2-wrapper {
+  background-color: white;
+  position: relative;
+  height: 575px;
+}
+
+.contact2-wrapper h2 {
+  color: #0b56a4;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px !important;
+  text-align: center;
+  padding-top: 50px;
+  /* font-size: clamp() */
+}
+
+.contact2-wrapper h2.lg-screen-title,
+.contact2-wrapper .section-p.lg-screen-title {
+  padding-top: 0px;
+  display: none;
+}
+.contact2-wrapper .svg-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: inline;
+}
+
+.contact2-wrapper .sm-screen-hide {
+  display: none;
+}
+
+.contact2-wrapper .sm-screen-show {
+  display: block;
+}
+
+.contact2-wrapper .contact-form-info {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  /* bottom: 150px; */
+  /* bottom: 120px; */
+}
+
+.contact-form-info .container-fluid {
+  width: 93%;
+  max-width: 1200px;
+}
+
+.contact2-wrapper .alert-wrapper {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  z-index: 50;
+}
+
+.contact2-wrapper .alert-wrapper button {
+  border: 0px;
+  font-size: 0.6em;
+  padding: 0px;
+  color: black !important;
+  background-color: transparent;
+}
+
+.contact2-wrapper .message-alert {
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  font-family: "Inter", sans-serif;
+  color: rgb(0, 175, 0);
+  letter-spacing: 0.0705em;
+  font-weight: 500;
+  position: relative;
+}
+
+.contact2-wrapper .close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.contact2-wrapper h3,
+.contact2-wrapper .section-p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact2-wrapper .container-fluid {
+  width: 93%;
+}
+
+.contact2-wrapper .contact-info {
+  padding-right: 100px;
+  padding-left: 10px;
+}
+
+.contact2-wrapper .section-p:last-of-type {
+  margin-bottom: 30px;
+  width: 70%;
+}
+
+.contact2-wrapper .contact-info a {
+  color: white !important;
+  text-decoration: none;
+  background-color: #ed6a22;
+  margin-right: 7px;
+  border-radius: 50%;
+  padding: 6px 10px;
+}
+
+.contact2-wrapper .contact-info h5 {
+  color: white;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+  margin-top: 90px;
+}
+
+.contact2-wrapper .contact-info p {
+  color: rgb(221, 221, 221);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.contact2-wrapper .contact-info p:last-of-type {
+  margin-bottom: 25px;
+}
+
+.contact2-wrapper .contact-info .fa-facebook-f {
+  padding: 0px 2px;
+}
+
+.contact2-wrapper .form-wrapper {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  /* background-color: rgb(223, 223, 223); */
+  background-color: white;
+  padding: 40px 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contact2-wrapper .form-wrapper button {
+  width: 100%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: #0b56a4;
+  border: 0px;
+  margin-top: 20px;
+  padding: 5px;
+  letter-spacing: 0.0705em;
+  /* font-size: 1.2em; */
+}
+
+.contact2-wrapper input,
+.contact2-wrapper textarea {
+  border: 1px solid rgb(202, 202, 202);
+  padding: 5px;
+  border-radius: 0px;
+}
+
+.contact2-wrapper span,
+.contact2-wrapper textarea {
+  width: 100%;
+}
+
+.contact2-wrapper .left-input,
+.contact2-wrapper .right-input {
+  margin-bottom: 20px;
+  width: 48%;
+}
+
+.contact2-wrapper .right-input {
+  margin-left: 4%;
+}
+
+.contact2-wrapper input::placeholder,
+.contact2-wrapper textarea::placeholder {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+  padding: 5px 7px;
+}
+
+.contact2-wrapper textarea {
+  height: 100px;
+}
+
+/* @media only screen and (min-width: 576px) {
+    .contact2-wrapper {
+        margin-top: 400px;
+    }
+} */
+
+/* @media only screen and (min-width: 768px) {
+    .contact2-wrapper {
+        margin-top: 350px;
+    }
+} */
+
+/* @media only screen and (min-width: 992px) {
+    .contact2-wrapper {
+        margin-top: 300px;
+    }
+} */
+
+@media only screen and (min-width: 1200px) {
+  /* .contact2-wrapper {
+        margin-top: 200px;
+    } */
+  .contact2-wrapper .contact-info h5 {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .contact2-wrapper h2.lg-screen-title,
+  .contact2-wrapper .section-p.lg-screen-title {
+    display: block;
+  }
+
+  .contact2-wrapper h2.sm-screen-title,
+  .contact2-wrapper .section-p.sm-screen-title {
+    display: none;
+  }
+}
