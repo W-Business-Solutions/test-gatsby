@@ -5,20 +5,9 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { HelmetProvider } from "react-helmet-async";
-import Landing from "./newSrc2/pages/landing/landing";
 import "./App.css";
-import HQSubcontractor from "./pages/hqsubcontractor";
-import axios from "axios";
 import { createTheme } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 import { responsiveFontSizes } from "@mui/material/styles";
-import Test from "./newSrc/pages/test/test";
-import "./App.css";
-import Lunch from "./newSrc2/pages/lunch";
-import NewJanitorial from "./newSrc2/pages/janitorial/newJanitorial";
-import Loading from "./newSrc2/components/loading/loading";
-import ThankyouWrapper from "./newSrc2/components/thankyouWrapper/thankyouWrapper";
 
 // new pages for redesign
 

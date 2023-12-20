@@ -1,7 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { useLocation } from "@reach/router";
-import { useEffect, useState } from "react";
 import ServicePage from "../newSrc2/components/servicePage/servicePage";
 import service1 from "../newSrc2/assets/asphalt/asphalt-milling-trucks-transblue.png";
 import service2 from "../newSrc2/assets/asphalt/asphalt-seal-coating-transblue.png";
@@ -10,22 +8,9 @@ import header from "../newSrc2/assets/asphalt/header.png";
 import headerMobile from "../newSrc2/assets/asphalt/header_mobile.png";
 
 function Asphalt() {
-  const location = useLocation();
-  const { pathname } = location;
-  const [title, setTitle] = useState("Asphalt | Transblue Facility Management");
-  const [meta, setMeta] = useState(
-    "Transform your multi-site business locations with Transblue facility management's high-quality asphalt services."
-  );
-
-  useEffect(() => {
-    if (pathname === "/asphalt/contact") {
-      setTitle("Asphalt | Contact | Transblue Facility Management");
-      setMeta(
-        "Let's talk more about getting your multi-site business locations high-quality asphalt with Transblue's facility management services."
-      );
-    }
-  }, []);
-
+  const title = "Asphalt | Transblue Facility Management";
+  const meta =
+    "Transform your multi-site business locations with Transblue facility management's high-quality asphalt services.";
   const services = [
     {
       img: service1,

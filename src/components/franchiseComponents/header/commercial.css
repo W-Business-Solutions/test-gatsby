@@ -1,0 +1,13 @@
+.franchise-commercial-wrapper {
+    width: 93%;
+    margin-bottom: 100px;
+}
+
+.franchise-commercial-wrapper img {
+    width: 100%;
+}
+
+.franchise-commercial-wrapper b {
+    margin-top: 15px;
+    display: block;
+}

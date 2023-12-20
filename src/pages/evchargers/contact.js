@@ -1,12 +1,11 @@
 import React from "react";
-import service1 from "../newSrc2/assets/ev/evchargers-two-ev-chargers-transblue.png";
-import service2 from "../newSrc2/assets/ev/evchargers-car-ev-charger-transblue.png";
-import service3 from "../newSrc2/assets/ev/evchargers-ev-charger-and-plug-transblue.png";
-import header from "../newSrc2/assets/ev/header.png";
-import headerMobile from "../newSrc2/assets/ev/header_mobile.png";
+import service1 from "../../newSrc2/assets/ev/evchargers-two-ev-chargers-transblue.png";
+import service2 from "../../newSrc2/assets/ev/evchargers-car-ev-charger-transblue.png";
+import service3 from "../../newSrc2/assets/ev/evchargers-ev-charger-and-plug-transblue.png";
+import header from "../../newSrc2/assets/ev/header.png";
+import headerMobile from "../../newSrc2/assets/ev/header_mobile.png";
 import { Helmet } from "react-helmet-async";
-import ServicePageContact from "../newSrc2/components/servicePageContact/servicePageContact";
-import ServicePage from "../newSrc2/components/servicePage/servicePage";
+import ServicePageContact from "../../newSrc2/components/servicePageContact/servicePageContact";
 
 function EvChargers() {
   const title = "EV Chargers | Contact | Transblue Facility Management";
@@ -37,7 +36,7 @@ function EvChargers() {
         <title>{title}</title>
         <meta name="description" content={meta} />
       </Helmet>
-      <ServicePage
+      <ServicePageContact
         headerImg={header}
         mobileHeader={headerMobile}
         headerText="EV Chargers"

@@ -1,10 +1,11 @@
 GATSBY to do:
-
 - add in the contact pages
-- add in washington page
 - fix blog link
+
+DONE ON GATSBY - not needed for production
+- add in washington page
 - add in janitorial page
-- replace contact forms with washington contact forms
 
 PRODUCTION to do:
-- replace header image on washington page with landing page video ( done on gatsby )/
+- replace header image on washington page with landing page video ( done on gatsby )
+- replace contact forms with washington contact forms ( done on gatsby )

@@ -1,16 +1,17 @@
 import React from "react";
-import service1 from "../newSrc2/assets/roofing/roofing-arial-roof-replacement-transblue.png";
-import service2 from "../newSrc2/assets/roofing/roofing-rooftops-city-transblue.png";
-import service3 from "../newSrc2/assets/roofing/roofing-upkept-residential-roofs.png";
-import header from "../newSrc2/assets/roofing/header.png";
-import headerMobile from "../newSrc2/assets/roofing/header_mobile.png";
+import service1 from "../../newSrc2/assets/roofing/roofing-arial-roof-replacement-transblue.png";
+import service2 from "../../newSrc2/assets/roofing/roofing-rooftops-city-transblue.png";
+import service3 from "../../newSrc2/assets/roofing/roofing-upkept-residential-roofs.png";
+import header from "../../newSrc2/assets/roofing/header.png";
+import headerMobile from "../../newSrc2/assets/roofing/header_mobile.png";
 import { Helmet } from "react-helmet-async";
-import ServicePage from "../newSrc2/components/servicePage/servicePage";
+import ServicePageContact from "../../newSrc2/components/servicePageContact/servicePageContact";
 
 function Roofing() {
-  const title = "Roofing | Transblue Facility Management";
+  const title = "Roofing | Contact | Transblue Facility Management";
   const meta =
-    "Transblue's facility management expertise ensures the longevity of your commercial roof across all your multi-site locations.";
+    "Contact us about how Transblue's facility management expertise can ensure the longevity of your commercial roof across all your multi-site locations.";
+
   const services = [
     {
       img: service1,
@@ -35,7 +36,7 @@ function Roofing() {
         <title>{title}</title>
         <meta name="description" content={meta} />
       </Helmet>
-      <ServicePage
+      <ServicePageContact
         headerImg={header}
         mobileHeader={headerMobile}
         headerText="Roofing"

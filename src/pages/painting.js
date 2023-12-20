@@ -5,28 +5,12 @@ import service3 from "../newSrc2/assets/painting/painting-touch-up-window-transb
 import header from "../newSrc2/assets/painting/header.png";
 import headerMobile from "../newSrc2/assets/painting/header_mobile.png";
 import { Helmet } from "react-helmet-async";
-import { useEffect, useState } from "react";
-import { useLocation } from "@reach/router";
-import ServicePage from "../newSrc2/components/servicePage/servicePage";
+import ServicePageContact from "../newSrc2/components/servicePageContact/servicePageContact";
 
 function Painting() {
-  const location = useLocation();
-  const { pathname } = location;
-  const [title, setTitle] = useState(
-    "Painting | Transblue Facility Management"
-  );
-  const [meta, setMeta] = useState(
-    "Transblue's facility management expertise ensures you will receive professional and consistent painting services across all your multi-site locations."
-  );
-
-  useEffect(() => {
-    if (pathname === "/painting/contact") {
-      setTitle("Painting | Contact | Transblue Facility Management");
-      setMeta(
-        "Let's talk more about how Transblue's facility management expertise ensures you will receive professional and consistent painting services."
-      );
-    }
-  }, []);
+  const title = "Painting | Transblue Facility Management";
+  const meta =
+    "Transblue's facility management expertise ensures you will receive professional and consistent painting services across all your multi-site locations.";
 
   const services = [
     {
@@ -52,7 +36,7 @@ function Painting() {
         <title>{title}</title>
         <meta name="description" content={meta} />
       </Helmet>
-      <ServicePage
+      <ServicePageContact
         headerImg={header}
         mobileHeader={headerMobile}
         headerText="Painting"

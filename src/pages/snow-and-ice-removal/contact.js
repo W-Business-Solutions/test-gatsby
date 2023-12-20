@@ -1,25 +1,26 @@
 import React, { useContext } from "react";
-import header from "../newSrc2/assets/snow/header.png";
-import headerMobile from "../newSrc2/assets/snow/header_mobile.png";
-import service1 from "../newSrc2/assets/snow/snow-plow-costco-transblue.png";
-import service2 from "../newSrc2/assets/snow/snow-hauling-truck-transblue.png";
-import service3 from "../newSrc2/assets/snow/snow-remote-monitoring-transblue.png";
-import csp from "../newSrc2/assets/snow/csp.png";
-import sima from "../newSrc2/assets/snow/sima.png";
-import { ScreenSizeContext } from "../contextWrappers/screenSizeContext";
+import header from "../../newSrc2/assets/snow/header.png";
+import headerMobile from "../../newSrc2/assets/snow/header_mobile.png";
+import service1 from "../../newSrc2/assets/snow/snow-plow-costco-transblue.png";
+import service2 from "../../newSrc2/assets/snow/snow-hauling-truck-transblue.png";
+import service3 from "../../newSrc2/assets/snow/snow-remote-monitoring-transblue.png";
+import csp from "../../newSrc2/assets/snow/csp.png";
+import sima from "../../newSrc2/assets/snow/sima.png";
+import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
 import { Helmet } from "react-helmet-async";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import ServicePage from "../newSrc2/components/servicePage/servicePage";
+import ServicePageContact from "../../newSrc2/components/servicePageContact/servicePageContact";
 
 function Snow() {
   const screenSizeContext = useContext(ScreenSizeContext);
   const { screenSize } = screenSizeContext;
-
-  const title = "Snow + Ice Management | Transblue Facility Management";
+  const title =
+    "Snow + Ice Management | Contact | Transblue Facility Management";
   const meta =
-    "Transblue's facility management expertise ensures your spaces are kept safe and accessible with our professional snow removal services.";
+    "Contact us about how Transblue's facility management expertise can ensure your spaces are kept safe and accessible with our professional snow removal services.";
+
   const services = [
     {
       img: service1,
@@ -44,7 +45,7 @@ function Snow() {
         <title>{title}</title>
         <meta name="description" content={meta} />
       </Helmet>
-      <ServicePage
+      <ServicePageContact
         headerImg={header}
         mobileHeader={headerMobile}
         headerText="Snow + Ice"
@@ -94,7 +95,7 @@ function Snow() {
             />
           </Stack>
         </Box>
-      </ServicePage>
+      </ServicePageContact>
     </>
   );
 }

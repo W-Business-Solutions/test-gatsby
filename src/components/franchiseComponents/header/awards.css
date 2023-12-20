@@ -1,0 +1,16 @@
+.awards-wrapper {
+    width: 100%;
+    background-color: white;
+    padding: 40px;
+}
+
+.awards-wrapper h2 {
+    font-family: 'Raleway';
+    text-align: center;
+    max-width: 600px;
+    width: 95%;
+    margin: 0 auto;
+    color: rgb(71, 71, 71);
+    border-bottom: 1px solid rgb(122, 122, 122);
+    padding-bottom: 20px;
+}

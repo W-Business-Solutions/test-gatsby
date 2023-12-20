@@ -12,13 +12,13 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import NavigateNext from "@mui/icons-material/NavigateNext";
 import ContactModal from "../contactModal/contactModal";
 import { useState, useContext } from "react";
-import { ScreenSizeContext } from "../../../App";
-import ContactForm from "../../forms/contact";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import ReliabilityCTA from "../CTA/reliabilityCTA";
 import landscapingPlaceholder from "../../assets/landscaping/placeholder.png";
-import snowPlaceholder from "../../assets/snow/placeholder.png";
 import lotsweepingPlaceholder from "../../assets/lotSweeping/placeholder.png";
+import snowPlaceholder from "../../assets/snow/placeholder.png";
+import WashingtonContact from "../../forms/washingtonContact";
+import modalStyle from "../../styles/modal";
 
 const ServiceCard = ({ img, text, alt, screenSize }) => {
   return (
@@ -52,12 +52,31 @@ const ServiceCard = ({ img, text, alt, screenSize }) => {
   );
 };
 
-function ServicePage(props) {
+const videos = {
+  Landscaping: {
+    video:
+      "https://tbconnectstorage.blob.core.windows.net/projectimages/Landscape Maintenace Loop.mp4",
+    id: "landscaping_mobile",
+    placeholder: landscapingPlaceholder,
+  },
+  ["Lot Sweeping"]: {
+    video:
+      "https://tbconnectstorage.blob.core.windows.net/projectimages/Lot Sweeping Loop.mp4",
+    id: "lotsweeping_mobile",
+    placeholder: lotsweepingPlaceholder,
+  },
+
+  ["Snow + Ice"]: {
+    video:
+      "https://tbconnectstorage.blob.core.windows.net/projectimages/Snow Header Loop - New.mp4",
+    id: "snow_mobile",
+    placeholder: snowPlaceholder,
+  },
+};
+
+function ServicePageContact(props) {
   const screenSizeContext = useContext(ScreenSizeContext);
   const { screenSize } = screenSizeContext;
-
-  const params = useParams();
-  const { page } = params;
 
   const {
     children,
@@ -81,28 +100,6 @@ function ServicePage(props) {
       behavior: "smooth",
       top: ref.current.offsetTop,
     });
-  };
-
-  const videos = {
-    Landscaping: {
-      video:
-        "https://tbconnectstorage.blob.core.windows.net/projectimages/Landscape Maintenace Loop.mp4",
-      id: "landscaping_mobile",
-      placeholder: landscapingPlaceholder,
-    },
-    ["Lot Sweeping"]: {
-      video:
-        "https://tbconnectstorage.blob.core.windows.net/projectimages/Lot Sweeping Loop.mp4",
-      id: "lotsweeping_mobile",
-      placeholder: lotsweepingPlaceholder,
-    },
-
-    ["Snow + Ice"]: {
-      video:
-        "https://tbconnectstorage.blob.core.windows.net/projectimages/Snow Header Loop - New.mp4",
-      id: "snow_mobile",
-      placeholder: snowPlaceholder,
-    },
   };
 
   return (
@@ -146,9 +143,7 @@ function ServicePage(props) {
           />
         )}
 
-      {(page !== "contact" ||
-        (page === "contact" &&
-          (screenSize === "small" || screenSize === "medium"))) && (
+      {(screenSize === "small" || screenSize === "medium") && (
         <Box
           sx={{
             color: "white",
@@ -215,102 +210,107 @@ function ServicePage(props) {
         </Box>
       )}
 
-      {page === "contact" &&
-        (screenSize === "small" || screenSize === "medium") && (
-          <Box sx={{ textAlign: "center" }}>
-            <ContactForm service={headerText} />
-          </Box>
-        )}
+      {(screenSize === "small" || screenSize === "medium") && (
+        <Box sx={{ textAlign: "center" }}>
+          <WashingtonContact service={headerText} />
+        </Box>
+      )}
 
-      {page === "contact" &&
-        (screenSize === "large" || screenSize === "xl") && (
-          <Box
-            sx={{
-              position: "absolute",
-              top: screenSize === "large" ? "60%" : "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 5,
-              textAlign: "center",
-              width: "90vw",
-              maxWidth: "1200px",
-            }}
-          >
-            <Grid container>
-              <Grid item xs={6} textAlign="center" my="auto">
-                <Box
-                  sx={{
-                    display: "flex",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    mb: 3,
-                  }}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Inter",
-                      fontWeight: 600,
-                      borderRight: "2px solid white",
-                      pr: 1,
-                    }}
-                  >
-                    {headerText}
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Inter",
-                      fontWeight: 600,
-                      pl: 1,
-                    }}
-                  >
-                    Contact Us
-                  </Typography>
-                </Box>
+      {(screenSize === "large" || screenSize === "xl") && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: screenSize === "large" ? "60%" : "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 5,
+            textAlign: "center",
+            width: "90vw",
+            maxWidth: "1200px",
+          }}
+        >
+          <Grid container>
+            <Grid item xs={6} textAlign="center" my="auto">
+              <Box
+                sx={{
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  mb: 3,
+                }}
+              >
                 <Typography
+                  variant="h4"
                   sx={{
                     color: "white",
                     fontFamily: "Inter",
-                    pb: 2,
-                    maxWidth: "90%",
-                    m: "0 auto",
-                    fontSize: screenSize === "xl" ? "16px" : "14px",
-                    maxWidth: "430px",
+                    fontWeight: 600,
+                    borderRight: "2px solid white",
+                    pr: 1,
                   }}
                 >
-                  Reach out to our dedicated team at Transblue to discover how
-                  we can elevate your commercial and multi-site operations by
-                  providing exceptional solutions tailored to your needs.
+                  {headerText}
                 </Typography>
                 <Typography
+                  variant="h4"
                   sx={{
                     color: "white",
                     fontFamily: "Inter",
-                    maxWidth: "90%",
-                    m: "0 auto",
-                    fontSize: screenSize === "xl" ? "16px" : "14px",
-                    pb: 1,
+                    fontWeight: 600,
+                    pl: 1,
                   }}
                 >
-                  We're here to help you succeed in your business ventures.
+                  Contact Us
                 </Typography>
-              </Grid>
-              <Grid item xs={6} textAlign="center" my="auto">
-                <Box
-                  sx={{
-                    maxWidth: "575px",
-                    m: "0 auto",
-                  }}
-                >
-                  <ContactForm service={headerText} />
-                </Box>
-              </Grid>
+              </Box>
+              <Typography
+                sx={{
+                  color: "white",
+                  fontFamily: "Inter",
+                  pb: 2,
+                  maxWidth: "90%",
+                  m: "0 auto",
+                  fontSize: screenSize === "xl" ? "16px" : "14px",
+                  maxWidth: "430px",
+                }}
+              >
+                Reach out to our dedicated team at Transblue to discover how we
+                can elevate your commercial and multi-site operations by
+                providing exceptional solutions tailored to your needs.
+              </Typography>
+              <Typography
+                sx={{
+                  color: "white",
+                  fontFamily: "Inter",
+                  maxWidth: "90%",
+                  m: "0 auto",
+                  fontSize: screenSize === "xl" ? "16px" : "14px",
+                  pb: 1,
+                }}
+              >
+                We're here to help you succeed in your business ventures.
+              </Typography>
             </Grid>
-          </Box>
-        )}
+            <Grid item xs={6} textAlign="center" my="auto">
+              <Box
+                sx={{
+                  maxWidth: "575px",
+                  bgcolor: "white",
+                  textAlign: "center",
+                  borderRadius: "10px",
+                  maxHeight: "90vh",
+                  overflowY: "auto",
+                  px: { xs: 2, sm: 3 },
+                  pt: { xs: 2, sm: 3 },
+                  pb: 3,
+                }}
+              >
+                <WashingtonContact service={headerText} />
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      )}
 
       <Box ref={ref} sx={{ py: "10vw" }}>
         <Grid
@@ -443,4 +443,4 @@ function ServicePage(props) {
   );
 }
 
-export default ServicePage;
+export default ServicePageContact;

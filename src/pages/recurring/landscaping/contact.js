@@ -1,17 +1,13 @@
 import React from "react";
-import service1 from "../../newSrc2/assets/landscaping/landscaping-front-loader-dirt-transblue.png";
-import service2 from "../../newSrc2/assets/landscaping/landscaping-upkeep-transblue.png";
-import service3 from "../../newSrc2/assets/landscaping/landscaping-grass-transblue.png";
-import header from "../../newSrc2/assets/landscaping/header.png";
-import headerMobile from "../../newSrc2/assets/landscaping/header_mobile.png";
+import service1 from "../../../newSrc2/assets/landscaping/landscaping-front-loader-dirt-transblue.png";
+import service2 from "../../../newSrc2/assets/landscaping/landscaping-upkeep-transblue.png";
+import service3 from "../../../newSrc2/assets/landscaping/landscaping-grass-transblue.png";
+import header from "../../../newSrc2/assets/landscaping/header.png";
+import headerMobile from "../../../newSrc2/assets/landscaping/header_mobile.png";
 import { Helmet } from "react-helmet-async";
-import { useLocation } from "@reach/router";
-import { useEffect, useState } from "react";
-import ServicePage from "../../newSrc2/components/servicePage/servicePage";
+import ServicePageContact from "../../../newSrc2/components/servicePageContact/servicePageContact";
 
 function Landscaping() {
-  const location = useLocation();
-  const { pathname } = location;
   const title = "Landscaping | Contact | Transblue Facility Management";
   const meta =
     "Contact us about how Transblue's facility management expertise can give you consistent, quality landscaping design and maintenance results.";
@@ -40,7 +36,7 @@ function Landscaping() {
         <title>{title}</title>
         <meta name="description" content={meta} />
       </Helmet>
-      <ServicePage
+      <ServicePageContact
         headerImg={header}
         mobileHeader={headerMobile}
         headerText="Landscaping"
