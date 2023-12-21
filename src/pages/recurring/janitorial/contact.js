@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import Navbar from "../../newSrc2/components/navbar/navbar";
-import Footer from "../../newSrc2/components/footer/newFooter";
+import Navbar from "../../../newSrc2/components/navbar/navbar";
+import Footer from "../../../newSrc2/components/footer/newFooter";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
@@ -9,55 +9,42 @@ import Link from "@mui/material/Link";
 
 import NavigateNext from "@mui/icons-material/NavigateNext";
 
-import StyledButton from "../../newSrc2/components/styledButton/styledButton";
-import centeredStyle from "../../newSrc2/styles/centeredStyle";
+import StyledButton from "../../../newSrc2/components/styledButton/styledButton";
+import centeredStyle from "../../../newSrc2/styles/centeredStyle";
 import { useRef } from "react";
-import ContactModal from "../../newSrc2/components/contactModal/contactModal";
-// import { ScreenSizeContext } from "../../../../src/App.js";
-import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
+import ContactModal from "../../../newSrc2/components/contactModal/contactModal";
+import { ScreenSizeContext } from "../../../contextWrappers/screenSizeContext";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useLocation } from "@reach/router";
-import ReliabilityCTA from "../../newSrc2/components/CTA/reliabilityCTA";
-import janitorial from "../../newSrc2/assets/janitorial/icons/janitorial.png";
-import carpet from "../../newSrc2/assets/janitorial/icons/carpet.png";
-import windowIcon from "../../newSrc2/assets/janitorial/icons/window.png";
-import floor from "../../newSrc2/assets/janitorial/icons/floor.png";
-import recycling from "../../newSrc2/assets/janitorial/icons/recycling.png";
-import pressure from "../../newSrc2/assets/janitorial/icons/pressure.png";
-import restroom from "../../newSrc2/assets/janitorial/icons/restroom.png";
-import disinfecting from "../../newSrc2/assets/janitorial/icons/disinfecting.png";
-import porter from "../../newSrc2/assets/janitorial/icons/porter.png";
-import dusting from "../../newSrc2/assets/janitorial/icons/dusting.png";
-import review from "../../newSrc2/assets/janitorial/review.png";
+import ReliabilityCTA from "../../../newSrc2/components/CTA/reliabilityCTA";
+
+import janitorial from "../../../newSrc2/assets/janitorial/icons/janitorial.png";
+import carpet from "../../../newSrc2/assets/janitorial/icons/carpet.png";
+import windowIcon from "../../../newSrc2/assets/janitorial/icons/window.png";
+import floor from "../../../newSrc2/assets/janitorial/icons/floor.png";
+import recycling from "../../../newSrc2/assets/janitorial/icons/recycling.png";
+import pressure from "../../../newSrc2/assets/janitorial/icons/pressure.png";
+import restroom from "../../../newSrc2/assets/janitorial/icons/restroom.png";
+import disinfecting from "../../../newSrc2/assets/janitorial/icons/disinfecting.png";
+import porter from "../../../newSrc2/assets/janitorial/icons/porter.png";
+import dusting from "../../../newSrc2/assets/janitorial/icons/dusting.png";
+import review from "../../../newSrc2/assets/janitorial/review.png";
 import { Helmet } from "react-helmet-async";
-import Facilities from "../../newSrc2/components/facilities/facilities";
-import placeholder from "../../newSrc2/assets/janitorial/placeholder.png";
-import ServiceComp from "../../newSrc2/components/serviceComp/serviceComp";
-import Review from "../../newSrc2/components/review/review";
-import Brands from "../../newSrc2/components/brands/brands";
+import Facilities from "../../../newSrc2/components/facilities/facilities";
+import placeholder from "../../../newSrc2/assets/janitorial/placeholder.png";
+import ServiceComp from "../../../newSrc2/components/serviceComp/serviceComp";
+import Review from "../../../newSrc2/components/review/review";
+import Brands from "../../../newSrc2/components/brands/brands";
+import WashingtonContact from "../../../newSrc2/forms/washingtonContact";
 
 function NewJanitorial(props) {
-  const location = useLocation();
-  const { pathname } = location;
-  const [title, setTitle] = useState(
-    "Janitorial | Transblue Facility Management"
-  );
-  const [meta, setMeta] = useState(
-    "Keep your commercial spaces clean and well-maintained with Transblue facility management's professional janitorial services for businesses of all sizes."
-  );
+  const title = "Janitorial | Contact | Transblue Facility Management";
+  const meta =
+    "Let's talk more on Transblue facility management's professional janitorial services for businesses of all sizes.";
 
-  useEffect(() => {
-    if (pathname === "/recurring/janitorial/contact") {
-      setTitle("Janitorial | Contact | Transblue Facility Management");
-      setMeta(
-        "Let's talk more on Transblue facility management's professional janitorial services for businesses of all sizes."
-      );
-    }
-  }, []);
   const screenSizeContext = useContext(ScreenSizeContext);
   const { screenSize } = screenSizeContext;
-
   const { headerText, services } = props;
+
   const ref = useRef();
   const [open, setOpen] = useState(false);
 
@@ -94,25 +81,12 @@ function NewJanitorial(props) {
           }}
         />
 
-        {screenSize !== "small" && (
-          <>
-            <img
-              alt=""
-              src={placeholder}
-              style={{
-                width: "100vw",
-                height: "100vh",
-                objectFit: "cover",
-                right: 0,
-                top: 0,
-                zIndex: -2,
-                position: "relative",
-              }}
-            />
-            <video autoPlay loop muted preload="none" poster={placeholder}>
-              <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Janitorial Header Loop.mp4" />
-            </video>
-          </>
+        {(screenSize === "medium" ||
+          screenSize === "large" ||
+          screenSize === "xl") && (
+          <video autoPlay loop muted preload="none" poster={placeholder}>
+            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Janitorial Header Loop.mp4" />
+          </video>
         )}
 
         {screenSize === "small" && (
@@ -130,49 +104,69 @@ function NewJanitorial(props) {
           />
         )}
 
-        <Box
-          sx={{
-            color: "white",
-            ...centeredStyle,
-            width: "90vw",
-            top: "calc(50% + 36px)",
-          }}
-        >
-          <Typography
-            variant="h3"
+        {(screenSize === "small" || screenSize === "medium") && (
+          <Box
             sx={{
-              fontFamily: "Inter",
-              fontWeight: 700,
-              lineHeight: "normal",
+              color: "white",
+              ...centeredStyle,
+              width: "90vw",
+              top: "calc(50% + 36px)",
             }}
           >
-            Janitorial
-          </Typography>
-          <Typography
-            sx={{
-              width: "70%",
-              m: "0 auto",
-              fontSize: { xs: "20px", xl: "26px" },
-              pt: { xs: 4, lg: 3, xl: 4 },
-              textAlign: "center",
-              fontFamily: "Inter",
-              fontWeight: 400,
-              lineHeight: "normal",
-            }}
-          >
-            Commercial Cleaning Services + Grounds Maintenance
-          </Typography>
-          {screenSize !== "small" && (
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Inter",
+                fontWeight: 700,
+                lineHeight: "normal",
+              }}
+            >
+              Janitorial
+            </Typography>
             <Typography
               sx={{
-                width: "100%",
-                maxWidth: {
-                  xs: "675px",
-                  lg: "550px",
-                  xl: "675px",
-                },
+                width: "70%",
+                m: "0 auto",
+                fontSize: { xs: "20px", xl: "26px" },
+                pt: { xs: 4, lg: 3, xl: 4 },
+                textAlign: "center",
+                fontFamily: "Inter",
+                fontWeight: 400,
+                lineHeight: "normal",
+              }}
+            >
+              Commercial Cleaning Services + Grounds Maintenance
+            </Typography>
+            {screenSize !== "small" && (
+              <Typography
+                sx={{
+                  width: "100%",
+                  maxWidth: {
+                    xs: "675px",
+                    lg: "550px",
+                    xl: "675px",
+                  },
+                  fontSize: { xs: "16px", xl: "20px" },
+                  pt: { xs: 2, md: 3, lg: 3, xl: 4 },
+                  textAlign: "center",
+                  m: "0 auto",
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
+              >
+                Stay ahead and safeguard your workplace with our industrial
+                cleaning services designed to support you and your team's
+                productivity. Experience our meticulous performance tracking and
+                budget-friendly cleaning plans crafted just for you.
+              </Typography>
+            )}
+            <Typography
+              sx={{
+                width: "80%",
+                maxWidth: "750px",
                 fontSize: { xs: "16px", xl: "20px" },
-                pt: { xs: 2, md: 3, lg: 3, xl: 4 },
+                pt: { xs: 10, md: 3, lg: 3, xl: 4 },
                 textAlign: "center",
                 m: "0 auto",
                 fontFamily: "Inter",
@@ -180,74 +174,168 @@ function NewJanitorial(props) {
                 lineHeight: "normal",
               }}
             >
-              Stay ahead and safeguard your workplace with our industrial
-              cleaning services designed to support you and your team's
-              productivity. Experience our meticulous performance tracking and
-              budget-friendly cleaning plans crafted just for you.
+              Your success is our mission – let's keep your business sparkling
+              together.
             </Typography>
-          )}
-          <Typography
-            sx={{
-              width: "80%",
-              maxWidth: "750px",
-              fontSize: { xs: "16px", xl: "20px" },
-              pt: { xs: 10, md: 3, lg: 3, xl: 4 },
-              textAlign: "center",
-              m: "0 auto",
-              fontFamily: "Inter",
-              fontWeight: 400,
-              lineHeight: "normal",
-            }}
-          >
-            Your success is our mission – let's keep your business sparkling
-            together.
-          </Typography>
-          <Stack
-            direction="row"
-            spacing={5}
-            sx={{
-              justifyContent: "center",
-              mt: { xs: 4, sm: 7 },
-            }}
-          >
-            <StyledButton
+            <Stack
+              direction="row"
+              spacing={5}
               sx={{
-                bgcolor: "white",
-                fontFamily: "Inter",
-                borderRadius: "30px",
-                width: "140px",
-                color: "black",
-                fontWeight: 500,
-                height: "37px",
-                border: "2px solid white",
+                justifyContent: "center",
+                mt: { xs: 4, sm: 7 },
               }}
-              variant="contained"
-              onClick={() => setOpen(true)}
             >
-              get started <NavigateNext sx={{ fontSize: "16px" }} />
-            </StyledButton>
-
-            {screenSize !== "small" && (
               <StyledButton
                 sx={{
-                  bgcolor: "black",
+                  bgcolor: "white",
                   fontFamily: "Inter",
                   borderRadius: "30px",
                   width: "140px",
-                  color: "white",
+                  color: "black",
                   fontWeight: 500,
-                  border: "2px solid white",
                   height: "37px",
+                  border: "2px solid white",
                 }}
                 variant="contained"
-                onClick={handleScroll}
+                onClick={() => setOpen(true)}
               >
-                Learn More <ExpandMoreIcon sx={{ fontSize: "16px" }} />
+                get started <NavigateNext sx={{ fontSize: "16px" }} />
               </StyledButton>
-            )}
-          </Stack>
-        </Box>
+
+              {screenSize !== "small" && (
+                <StyledButton
+                  sx={{
+                    bgcolor: "black",
+                    fontFamily: "Inter",
+                    borderRadius: "30px",
+                    width: "140px",
+                    color: "white",
+                    fontWeight: 500,
+                    border: "2px solid white",
+                    height: "37px",
+                  }}
+                  variant="contained"
+                  onClick={handleScroll}
+                >
+                  Learn More <ExpandMoreIcon sx={{ fontSize: "16px" }} />
+                </StyledButton>
+              )}
+            </Stack>
+          </Box>
+        )}
       </Box>
+
+      {(screenSize === "small" || screenSize === "medium") && (
+        <Box sx={{ textAlign: "center" }}>
+          <WashingtonContact service="Janitorial" />
+        </Box>
+      )}
+
+      {(screenSize === "large" || screenSize === "xl") && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: screenSize === "large" ? "60%" : "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 5,
+            textAlign: "center",
+            width: "90vw",
+            maxWidth: "1200px",
+          }}
+        >
+          <Grid container>
+            <Grid item xs={6} textAlign="center" my="auto">
+              <Typography
+                variant="h3"
+                sx={{
+                  color: "white",
+                  fontFamily: "Inter",
+                  fontWeight: 600,
+                  pr: 1,
+                  mb: 3,
+                }}
+              >
+                Janitorial
+              </Typography>
+              <Typography
+                sx={{
+                  m: "0 auto",
+                  fontSize: {
+                    xs: "20px",
+                    lg: "20px",
+                  },
+                  textAlign: "center",
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  lineHeight: "normal",
+                  color: "white",
+                }}
+              >
+                Commercial Cleaning Services + Grounds Maintenance
+              </Typography>
+              <Typography
+                sx={{
+                  m: "0 auto",
+                  fontSize: {
+                    xs: "20px",
+                    lg: "16px",
+                  },
+                  textAlign: "center",
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                  color: "white",
+                  mt: 2,
+                  maxWidth: "400px",
+                }}
+              >
+                Stay ahead and safeguard your workplace with our industrial
+                cleaning services designed to support you and your team's
+                productivity. Experience our meticulous performance tracking and
+                budget-friendly cleaning plans crafted just for you.
+              </Typography>
+              <Typography
+                sx={{
+                  m: "0 auto",
+                  fontSize: {
+                    xs: "20px",
+                    lg: "16px",
+                  },
+                  textAlign: "center",
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                  color: "white",
+                  mt: 2,
+                  maxWidth: "400px",
+                }}
+              >
+                Your success is our mission – let's keep your business sparkling
+                together.
+              </Typography>
+            </Grid>
+            <Grid item xs={6} textAlign="center" my="auto">
+              <Box
+                sx={{
+                  maxWidth: "575px",
+                  m: "0 auto",
+                  bgcolor: "white",
+                  width: "100%",
+                  boxShadow: { xs: 0, lg: 24 },
+                  py: 2,
+                  px: { xs: 3, md: 2, lg: 3, xl: 5 },
+                  borderRadius: "5px",
+                  maxHeight: { xs: "100%", md: "90vh" },
+                  overflowY: "auto",
+                }}
+              >
+                <WashingtonContact service={headerText} />
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      )}
 
       <Box
         ref={ref}
@@ -481,7 +569,7 @@ function NewJanitorial(props) {
       />
       <Brands bgcolor="rgba(67, 67, 68, 1)" />
 
-      {/* <Facilities displayTitle /> */}
+      <Facilities displayTitle />
 
       <ReliabilityCTA
         buttonText="Let's get started"

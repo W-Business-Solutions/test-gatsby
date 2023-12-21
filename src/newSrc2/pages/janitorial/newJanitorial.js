@@ -96,12 +96,12 @@ function NewJanitorial(props) {
           }}
         />
 
-        {(screenSize === "medium" ||
-          screenSize === "large" ||
-          screenSize === "xl") && (
-          <video autoPlay loop muted preload="none" poster={placeholder}>
-            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Janitorial Header Loop.mp4" />
-          </video>
+        {screenSize !== "small" && (
+          <>
+            <video autoPlay loop muted preload="none" poster={placeholder}>
+              <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Janitorial Header Loop.mp4" />
+            </video>
+          </>
         )}
 
         {screenSize === "small" && (

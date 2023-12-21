@@ -134,18 +134,31 @@ function ServicePage(props) {
       {(headerText === "Landscaping" ||
         headerText === "Lot Sweeping" ||
         headerText === "Snow + Ice") &&
-        (screenSize === "medium" ||
-          screenSize === "large" ||
-          screenSize === "xl") && (
-          <video
-            autoPlay
-            loop
-            muted
-            preload="none"
-            poster={videos[headerText].placeholder}
-          >
-            <source src={videos[headerText].video} />
-          </video>
+        screenSize !== "small" && (
+          <>
+            <img
+              alt=""
+              src={videos[headerText].placeholder}
+              style={{
+                width: "100vw",
+                height: "100vh",
+                objectFit: "cover",
+                right: 0,
+                top: 0,
+                zIndex: -2,
+                position: "relative",
+              }}
+            />
+            <video
+              autoPlay
+              loop
+              muted
+              preload="none"
+              poster={videos[headerText].placeholder}
+            >
+              <source src={videos[headerText].video} />
+            </video>
+          </>
         )}
 
       {(headerText === "Landscaping" ||

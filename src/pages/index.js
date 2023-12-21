@@ -165,12 +165,24 @@ function Landing() {
       <ContactModal open={open} setOpen={setOpen} />
       <Navbar page="landing" />
       <Box className="overlay" />
-      {(screenSize === "medium" ||
-        screenSize === "large" ||
-        screenSize === "xl") && (
-        <video autoPlay loop muted preload="none" poster={placeholder}>
-          <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
-        </video>
+      {screenSize !== "small" && (
+        <>
+          <img
+            src={placeholder}
+            style={{
+              width: "100vw",
+              height: "100vh",
+              objectFit: "cover",
+              right: 0,
+              top: 0,
+              zIndex: -2,
+              position: "relative",
+            }}
+          />
+          <video autoPlay loop muted preload="none" poster={placeholder}>
+            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
+          </video>
+        </>
       )}
 
       {screenSize === "small" && <div id="header_mobile" />}

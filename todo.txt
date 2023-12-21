@@ -1,6 +1,6 @@
 GATSBY to do:
 - fix blog link
-- fix link to core values in footer
+- fix /thankyou
 
 DONE ON GATSBY - not needed for production
 - add in washington page
@@ -10,3 +10,5 @@ DONE ON GATSBY - not needed for production
 PRODUCTION to do:
 - replace header image on washington page with landing page video ( done on gatsby )
 - replace contact forms with washington contact forms ( done on gatsby )
+- fix link to core values in footer
+

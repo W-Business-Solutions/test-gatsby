@@ -24,6 +24,7 @@ import Review from "../newSrc2/components/review/review";
 import ReliabilityCTA from "../newSrc2/components/CTA/reliabilityCTA";
 import Footer from "../newSrc2/components/footer/newFooter";
 import modalStyle from "../newSrc2/styles/modal";
+import placeholder from "../newSrc2/assets/landing/placeholder.png";
 
 const StyledHeaderText = styled(Typography)(({ theme }) => ({
   color: "white",
@@ -168,130 +169,133 @@ function Washington() {
       </Modal>
       <Navbar page="washington" />
 
-      <Box
-        sx={{
-          position: "relative",
-          width: "100vw",
-          height:
-            screenSize === "xl"
-              ? "80vh"
-              : screenSize === "small"
-              ? "80vh"
-              : "90vh",
-          mt: "36px",
-        }}
-      >
-        {screenSize !== "small" && (
-          <video autoPlay loop muted preload="none">
-            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
-          </video>
-        )}
-        {screenSize === "small" && (
+      <Box className="overlay" />
+
+      {screenSize !== "small" && (
+        <>
           <img
-            src={mobileHeader}
+            alt=""
+            src={placeholder}
             style={{
               width: "100vw",
-              height: "100%",
+              height: "100vh",
               objectFit: "cover",
               right: 0,
               top: 0,
-              zIndex: -1,
+              zIndex: -2,
+              position: "relative",
             }}
           />
-        )}
-        {(screenSize === "large" || screenSize === "xl") && (
-          <Box
-            sx={{
-              position: "absolute",
-              top: "calc(50% + 36px)",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 5,
-              textAlign: "center",
-              width: "90vw",
-              maxWidth: "1400px",
-            }}
-          >
-            <Grid container spacing={{ md: 5, xl: 0 }}>
-              <Grid item xs={6} textAlign="center" my="auto">
-                <Box
-                  sx={{
-                    textAlign: "center",
-                    mb: 3,
-                  }}
-                >
-                  <StyledHeaderText variant="h4">
-                    Your Local Facility
-                  </StyledHeaderText>
-                  <StyledHeaderText variant="h4">
-                    Management Neighbors
-                  </StyledHeaderText>
-                </Box>
-                <StyledHeaderBody sx={{ pb: 3 }}>
-                  Your facility management needs meets the Transblue excellence!
-                  Specializing in snow removal, janitorial, landscaping, and
-                  asphalt/lot sweeping services, we always want to ensure that
-                  your commercial/industrial property always looks its best!
-                </StyledHeaderBody>
-                <StyledHeaderBody>
-                  Not just local? No problem! Transblue’s diverse network of
-                  contractors makes it so you only have to deal with us, we’ll
-                  handle the rest.
-                </StyledHeaderBody>
-              </Grid>
-              <Grid item xs={6} textAlign="center" my="auto">
-                <Box
-                  sx={{
-                    maxWidth: "575px",
-                    m: "0 auto",
-                    bgcolor: "white",
-                    width: "100%",
-                    boxShadow: { xs: 0, lg: 24 },
-                    py: 2,
-                    px: { xs: 3, md: 2, lg: 3, xl: 5 },
-                    borderRadius: "5px",
-                    maxHeight: { xs: "100%", md: "90vh" },
-                    overflowY: "auto",
-                  }}
-                >
-                  <WashingtonContact />
-                </Box>
-              </Grid>
+          <video autoPlay loop muted preload="none">
+            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
+          </video>
+        </>
+      )}
+      {screenSize === "small" && (
+        <img
+          src={mobileHeader}
+          style={{
+            width: "100vw",
+            height: "100%",
+            objectFit: "cover",
+            right: 0,
+            top: 0,
+            zIndex: -1,
+          }}
+        />
+      )}
+      {(screenSize === "large" || screenSize === "xl") && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: "calc(50% + 36px)",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 5,
+            textAlign: "center",
+            width: "90vw",
+            maxWidth: "1400px",
+          }}
+        >
+          <Grid container spacing={{ md: 5, xl: 0 }}>
+            <Grid item xs={6} textAlign="center" my="auto">
+              <Box
+                sx={{
+                  textAlign: "center",
+                  mb: 3,
+                }}
+              >
+                <StyledHeaderText variant="h4">
+                  Your Local Facility
+                </StyledHeaderText>
+                <StyledHeaderText variant="h4">
+                  Management Neighbors
+                </StyledHeaderText>
+              </Box>
+              <StyledHeaderBody sx={{ pb: 3 }}>
+                Your facility management needs meets the Transblue excellence!
+                Specializing in snow removal, janitorial, landscaping, and
+                asphalt/lot sweeping services, we always want to ensure that
+                your commercial/industrial property always looks its best!
+              </StyledHeaderBody>
+              <StyledHeaderBody>
+                Not just local? No problem! Transblue’s diverse network of
+                contractors makes it so you only have to deal with us, we’ll
+                handle the rest.
+              </StyledHeaderBody>
             </Grid>
-          </Box>
-        )}
-        {(screenSize === "small" || screenSize === "medium") && (
-          <Box
-            sx={{
-              color: "white",
-              ...centeredStyle,
-              width: "95vw",
-              top: "calc(50%)",
-            }}
-          >
-            <StyledHeaderText sx={{ fontSize: "1.8rem" }}>
-              Your Local Facility
-            </StyledHeaderText>
-            <StyledHeaderText sx={{ fontSize: "1.8rem", mb: 3 }}>
-              Management Neighbors
-            </StyledHeaderText>
-            <StyledHeaderBody sx={{ pb: 3 }}>
-              Your facility management needs meets the Transblue excellence!
-              Specializing in snow removal, janitorial, landscaping, and
-              asphalt/lot sweeping services, we always want to ensure that your
-              commercial/industrial property always looks its best!
-            </StyledHeaderBody>
-            <StyledHeaderBody>
-              Not just local? No problem! Transblue’s diverse network of
-              contractors makes it so you only have to deal with us, we’ll
-              handle the rest.
-            </StyledHeaderBody>
-            <StyledButton variant="contained" onClick={() => setOpen(true)}>
-              get started <NavigateNext sx={{ fontSize: "16px" }} />
-            </StyledButton>
-          </Box>
-        )}
-      </Box>
+            <Grid item xs={6} textAlign="center" my="auto">
+              <Box
+                sx={{
+                  maxWidth: "575px",
+                  m: "0 auto",
+                  bgcolor: "white",
+                  width: "100%",
+                  boxShadow: { xs: 0, lg: 24 },
+                  py: 2,
+                  px: { xs: 3, md: 2, lg: 3, xl: 5 },
+                  borderRadius: "5px",
+                  maxHeight: { xs: "100%", md: "90vh" },
+                  overflowY: "auto",
+                }}
+              >
+                <WashingtonContact />
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      )}
+      {(screenSize === "small" || screenSize === "medium") && (
+        <Box
+          sx={{
+            color: "white",
+            ...centeredStyle,
+            width: "95vw",
+            top: "calc(50%)",
+          }}
+        >
+          <StyledHeaderText sx={{ fontSize: "1.8rem" }}>
+            Your Local Facility
+          </StyledHeaderText>
+          <StyledHeaderText sx={{ fontSize: "1.8rem", mb: 3 }}>
+            Management Neighbors
+          </StyledHeaderText>
+          <StyledHeaderBody sx={{ pb: 3 }}>
+            Your facility management needs meets the Transblue excellence!
+            Specializing in snow removal, janitorial, landscaping, and
+            asphalt/lot sweeping services, we always want to ensure that your
+            commercial/industrial property always looks its best!
+          </StyledHeaderBody>
+          <StyledHeaderBody>
+            Not just local? No problem! Transblue’s diverse network of
+            contractors makes it so you only have to deal with us, we’ll handle
+            the rest.
+          </StyledHeaderBody>
+          <StyledButton variant="contained" onClick={() => setOpen(true)}>
+            get started <NavigateNext sx={{ fontSize: "16px" }} />
+          </StyledButton>
+        </Box>
+      )}
 
       {screenSize === "small" && (
         <Box sx={{ width: "95vw", ml: "3vw" }}>
