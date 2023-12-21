@@ -42,7 +42,7 @@ const categories = [
       },
       {
         title: "Core Values",
-        href: "/about/core-values",
+        href: "/about/corevalues",
       },
       {
         title: "Giving Back",

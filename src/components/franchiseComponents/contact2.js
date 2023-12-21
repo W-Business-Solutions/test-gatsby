@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./form";
 import "./contact2.css";
 
 function Contact2(props) {
   const [isSent, setIsSent] = useState(false);
-  let height;
-  if (window.innerWidth < 576) height = 12;
-  else if (window.innerWidth < 710) height = 10;
-  else if (window.innerWidth < 875) height = 8;
-  else if (window.innerWidth > 1200 && window.innerWidth < 1335) height = 5;
-  else if (window.innerWidth > 1335) height = 4;
-  else height = 6;
+  const [height, setHeight] = useState(12);
+  useEffect(() => {
+    if (window.innerWidth < 576) setHeight(12);
+    else if (window.innerWidth < 710) setHeight(10);
+    else if (window.innerWidth < 875) setHeight(8);
+    else if (window.innerWidth > 1200 && window.innerWidth < 1335) setHeight(5);
+    else if (window.innerWidth > 1335) setHeight(4);
+    else setHeight(6);
+  }, []);
 
   let zipcode = props.franchise.zipcode;
 

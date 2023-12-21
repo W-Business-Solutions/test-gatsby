@@ -193,7 +193,7 @@ function Franchise() {
                       />
                     </div>
                     <div className="col-md-6 col-12">
-                      {location.lat > 0 && (
+                      {location.lat > 0 && typeof window !== "undefined" && (
                         <Map
                           lat={location.lat}
                           lon={location.lon}

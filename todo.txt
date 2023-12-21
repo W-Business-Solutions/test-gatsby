@@ -1,5 +1,6 @@
 GATSBY to do:
 - fix blog link
+- fix link to core values in footer
 
 DONE ON GATSBY - not needed for production
 - add in washington page

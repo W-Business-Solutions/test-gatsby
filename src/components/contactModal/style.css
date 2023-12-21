@@ -32,12 +32,15 @@
   font-size: 0.9em;
 }
 
-.contact-modal-wrapper .close {
+.close {
   position: absolute;
   top: 5px;
   right: 12px;
   font-weight: 300;
   font-size: 2rem;
+  border: 0px;
+  background-color: transparent;
+  color: red;
 }
 
 .contact-form input {
