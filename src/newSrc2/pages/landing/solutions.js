@@ -20,7 +20,6 @@ function Solutions({ setOpen }) {
           left: 0,
           width: "100vw",
           bgcolor: "rgba(0,0,0,.6)",
-          zIndex: 3,
         }}
       />
       <Box
@@ -28,7 +27,7 @@ function Solutions({ setOpen }) {
           ...centeredStyle,
           width: "90%",
           maxWidth: "600px",
-          zIndex: 5,
+          zIndex: -2,
         }}
       >
         <Typography
