@@ -6,13 +6,13 @@ function ThemeContext({ children }) {
   let fontTheme = createTheme();
   fontTheme = responsiveFontSizes(fontTheme);
 
-  const breakpointOverrides = {
-    xs: 0,
-    sm: 600,
-    md: 900,
-    lg: 1200,
-    xl: 1440,
-  };
+  // const breakpointOverrides = {
+  //   xs: 0,
+  //   sm: 600,
+  //   md: 900,
+  //   lg: 1200,
+  //   xl: 1440,
+  // };
 
   const interTheme = createTheme({
     root: {
@@ -44,7 +44,6 @@ function ThemeContext({ children }) {
         },
       },
     },
-    breakpoints: { values: { ...breakpointOverrides } },
   });
 
   return (

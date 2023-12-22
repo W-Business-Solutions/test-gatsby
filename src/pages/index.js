@@ -153,6 +153,13 @@ function Landing() {
     });
   };
 
+  const headerStyle = {
+    fontFamily: "Inter",
+    fontWeight: 700,
+    lineHeight: "90%",
+    fontSize: { xs: "2.125rem", md: "3.75rem" },
+  };
+
   return (
     <Suspense fallback={<Loading />}>
       <Helmet>
@@ -183,7 +190,7 @@ function Landing() {
         </video>
       </Box>
 
-      <Box sx={{ display: { xs: "block", md: "none " } }} id="header_mobile" />
+      <Box sx={{ display: { xs: "block", md: "none" } }} id="header_mobile" />
       <Box
         sx={{
           color: "white",
@@ -192,8 +199,12 @@ function Landing() {
           top: "calc(50% + 36px)",
         }}
       >
-        <StyledHeader>Turn facility service</StyledHeader>
-        <StyledHeader>concerns into solutions.</StyledHeader>
+        <Typography variant="h1" sx={headerStyle}>
+          Turn facility service
+        </Typography>
+        <Typography variant="h1" sx={headerStyle}>
+          concerns into solutions.
+        </Typography>
         <StyledHeaderBody variant="h6">
           Facility services and management that consistently solves recurring
           commercial and industrial upkeep.
