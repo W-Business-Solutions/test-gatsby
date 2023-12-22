@@ -215,7 +215,7 @@ function ContactForm({ service, page }) {
               m: "0 auto",
             }}
           >
-            Let's meet up and consult in-person! Our new customers:
+            Our new customers:
           </Typography>
           <ul
             style={{

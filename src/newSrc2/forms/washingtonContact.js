@@ -237,7 +237,7 @@ function WashingtonContact({ service }) {
             pl: { xs: 2, md: 0 },
           }}
         >
-          Let's meet up and consult in-person! Our new customers:
+          Our new customers:
         </Typography>
         <ul
           style={{

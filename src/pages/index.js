@@ -141,8 +141,8 @@ function Landing() {
   const location = useLocation();
   const pathname = location.pathname;
   const formRef = useRef();
-  const screenSizeContext = useContext(ScreenSizeContext);
-  const { screenSize } = screenSizeContext;
+  // const screenSizeContext = useContext(ScreenSizeContext);
+  // const { screenSize } = screenSizeContext;
 
   const [open, setOpen] = useState(pathname === "/contact" ? true : false);
 
@@ -165,27 +165,25 @@ function Landing() {
       <ContactModal open={open} setOpen={setOpen} />
       <Navbar page="landing" />
       <Box className="overlay" />
-      {screenSize !== "small" && (
-        <>
-          <img
-            src={placeholder}
-            style={{
-              width: "100vw",
-              height: "100vh",
-              objectFit: "cover",
-              right: 0,
-              top: 0,
-              zIndex: -2,
-              position: "relative",
-            }}
-          />
-          <video autoPlay loop muted preload="none" poster={placeholder}>
-            <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
-          </video>
-        </>
-      )}
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <img
+          src={placeholder}
+          style={{
+            width: "100vw",
+            height: "100vh",
+            objectFit: "cover",
+            right: 0,
+            top: 0,
+            zIndex: -2,
+            position: "relative",
+          }}
+        />
+        <video autoPlay loop muted preload="none" poster={placeholder}>
+          <source src="https://tbconnectstorage.blob.core.windows.net/projectimages/Home Page Header.mp4" />
+        </video>
+      </Box>
 
-      {screenSize === "small" && <div id="header_mobile" />}
+      <Box sx={{ display: { xs: "block", md: "none " } }} id="header_mobile" />
       <Box
         sx={{
           color: "white",
