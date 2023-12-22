@@ -157,7 +157,7 @@ function Landing() {
     fontFamily: "Inter",
     fontWeight: 700,
     lineHeight: "90%",
-    fontSize: { xs: "2.125rem", md: "3.75rem" },
+    // fontSize: { xs: "2.125rem", md: "3.75rem" },
   };
 
   return (
@@ -199,10 +199,10 @@ function Landing() {
           top: "calc(50% + 36px)",
         }}
       >
-        <Typography variant="h1" sx={headerStyle}>
+        <Typography variant="h2" sx={headerStyle}>
           Turn facility service
         </Typography>
-        <Typography variant="h1" sx={headerStyle}>
+        <Typography variant="h2" sx={headerStyle}>
           concerns into solutions.
         </Typography>
         <StyledHeaderBody variant="h6">
