@@ -10,6 +10,7 @@ import { useLocation } from "@reach/router";
 
 import { styled } from "@mui/material/styles";
 import Captcha from "../../components/captcha/captcha";
+import ThankyouWrapper from "../../contextWrappers/thankyouWrapper";
 
 const placeholderStyle = {
   border: "0px",
@@ -170,10 +171,10 @@ function ContactPageForm() {
             message: "",
           });
           setIsSubmitted(true);
-          //   window.location.href =
-          //     pathname === "/"
-          //       ? `${window.location.href}thankyou`
-          //       : `${window.location.href}/thankyou`;
+          window.location.href =
+            pathname === "/"
+              ? `${window.location.href}thankyou`
+              : `${window.location.href}/thankyou`;
         });
     }
   }
@@ -186,14 +187,15 @@ function ContactPageForm() {
   };
 
   return (
-    <Box
-      sx={{
-        ml: { xs: "5vw", lg: "25vw", xl: "35vw" },
-        width: { xs: "90vw", lg: "50vw", xl: "30vw" },
-      }}
-    >
-      <Grid container spacing={{ xs: 2, lg: 2, xl: 3 }}>
-        {/* <Grid item xs={12}>
+    <ThankyouWrapper>
+      <Box
+        sx={{
+          ml: { xs: "5vw", lg: "25vw", xl: "35vw" },
+          width: { xs: "90vw", lg: "50vw", xl: "30vw" },
+        }}
+      >
+        <Grid container spacing={{ xs: 2, lg: 2, xl: 3 }}>
+          {/* <Grid item xs={12}>
 
                     <Select
                         input={<StyledSelect />}
@@ -212,150 +214,151 @@ function ContactPageForm() {
                         <MenuItem value='billing' sx={{fontSize: '16px', fontFamily: 'Inter'}}>I have a question about billing</MenuItem>
                     </Select>
                 </Grid> */}
-        <Grid item xs={12} md={6}>
-          <InputBase
-            value={contactForm?.firstName}
-            fullWidth
-            size="small"
-            onChange={handleChange}
-            id="firstName"
-            placeholder="First Name"
-            inputProps={{
-              sx: {
-                bgcolor: "white",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={placeholderStyle}
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <InputBase
-            value={contactForm?.lastName}
-            fullWidth
-            size="small"
-            onChange={handleChange}
-            id="lastName"
-            placeholder="Last Name"
-            inputProps={{
-              sx: {
-                border: "0px",
-                bgcolor: "white",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={placeholderStyle}
-          />
+          <Grid item xs={12} md={6}>
+            <InputBase
+              value={contactForm?.firstName}
+              fullWidth
+              size="small"
+              onChange={handleChange}
+              id="firstName"
+              placeholder="First Name"
+              inputProps={{
+                sx: {
+                  bgcolor: "white",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={placeholderStyle}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <InputBase
+              value={contactForm?.lastName}
+              fullWidth
+              size="small"
+              onChange={handleChange}
+              id="lastName"
+              placeholder="Last Name"
+              inputProps={{
+                sx: {
+                  border: "0px",
+                  bgcolor: "white",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={placeholderStyle}
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <InputBase
+              value={contactForm?.email}
+              fullWidth
+              size="small"
+              onChange={(e) => {
+                handleChange(e);
+                setErrors({
+                  ...errors,
+                  email: false,
+                });
+              }}
+              id="email"
+              placeholder="Email *"
+              required
+              inputProps={{
+                sx: {
+                  border: "0px",
+                  bgcolor: "white",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={errors.email ? errorStyle : placeholderStyle}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <InputBase
+              value={contactForm?.phone}
+              fullWidth
+              size="small"
+              id="phone"
+              placeholder="Phone *"
+              required
+              onChange={(e) => {
+                handleChange(e);
+                setErrors({
+                  ...errors,
+                  phone: false,
+                });
+              }}
+              inputProps={{
+                sx: {
+                  bgcolor: "white",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={errors.phone ? errorStyle : placeholderStyle}
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <InputBase
+              value={contactForm?.message}
+              fullWidth
+              size="small"
+              onChange={handleChange}
+              id="message"
+              placeholder="Message"
+              multiline
+              minRows={4}
+              inputProps={{
+                sx: {
+                  bgcolor: "white",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={placeholderStyle}
+            />
+          </Grid>
         </Grid>
 
-        <Grid item xs={12}>
-          <InputBase
-            value={contactForm?.email}
-            fullWidth
-            size="small"
-            onChange={(e) => {
-              handleChange(e);
-              setErrors({
-                ...errors,
-                email: false,
-              });
-            }}
-            id="email"
-            placeholder="Email *"
-            required
-            inputProps={{
-              sx: {
-                border: "0px",
-                bgcolor: "white",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={errors.email ? errorStyle : placeholderStyle}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <InputBase
-            value={contactForm?.phone}
-            fullWidth
-            size="small"
-            id="phone"
-            placeholder="Phone *"
-            required
-            onChange={(e) => {
-              handleChange(e);
-              setErrors({
-                ...errors,
-                phone: false,
-              });
-            }}
-            inputProps={{
-              sx: {
-                bgcolor: "white",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={errors.phone ? errorStyle : placeholderStyle}
-          />
-        </Grid>
+        {!submitEnabled && (
+          <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+            <Captcha onChange={() => setSubmitEnabled(true)} />
+          </Box>
+        )}
 
-        <Grid item xs={12}>
-          <InputBase
-            value={contactForm?.message}
-            fullWidth
-            size="small"
-            onChange={handleChange}
-            id="message"
-            placeholder="Message"
-            multiline
-            minRows={4}
-            inputProps={{
-              sx: {
-                bgcolor: "white",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
+        {!isSubmitted && submitEnabled && (
+          <StyledButton
+            sx={{
+              bgcolor: "#007AFF",
+              fontSize: "12px",
+              width: { xs: "100%", md: "74%" },
+              mt: { xs: 2, lg: 3, xl: 4 },
+              ml: { md: "13%" },
             }}
-            sx={placeholderStyle}
-          />
-        </Grid>
-      </Grid>
-
-      {!submitEnabled && (
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-          <Captcha onChange={() => setSubmitEnabled(true)} />
-        </Box>
-      )}
-
-      {!isSubmitted && submitEnabled && (
-        <StyledButton
-          sx={{
-            bgcolor: "#007AFF",
-            fontSize: "12px",
-            width: { xs: "100%", md: "74%" },
-            mt: { xs: 2, lg: 3, xl: 4 },
-            ml: { md: "13%" },
-          }}
-          variant="contained"
-          onClick={submit}
-        >
-          submit
-        </StyledButton>
-      )}
-      {isSubmitted && (
-        <Alert severity="success" fullWidth sx={{ mt: { xs: 2, lg: 3 } }}>
-          Thank you! Someone from our team will reach out to you shortly
-        </Alert>
-      )}
-    </Box>
+            variant="contained"
+            onClick={submit}
+          >
+            submit
+          </StyledButton>
+        )}
+        {isSubmitted && (
+          <Alert severity="success" fullWidth sx={{ mt: { xs: 2, lg: 3 } }}>
+            Thank you! Someone from our team will reach out to you shortly
+          </Alert>
+        )}
+      </Box>
+    </ThankyouWrapper>
   );
 }
 

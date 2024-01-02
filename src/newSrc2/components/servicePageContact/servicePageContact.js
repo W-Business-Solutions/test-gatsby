@@ -138,26 +138,22 @@ function ServicePageContact(props) {
           </>
         )}
 
-      {(headerText === "Landscaping" ||
-        headerText === "Lot Sweeping" ||
-        headerText === "Snow + Ice") &&
+      {["Landscaping", "Lot Sweeping", "Snow + Ice"].includes(headerText) &&
         screenSize === "small" && <div id={videos[headerText].id} />}
 
-      {headerText !== "Landscaping" &&
-        headerText !== "Lot Sweeping" &&
-        headerText !== "Snow + Ice" && (
-          <img
-            src={screenSize === "small" ? mobileHeader : headerImg}
-            style={{
-              width: "100vw",
-              height: "100vh",
-              objectFit: "cover",
-              right: 0,
-              top: 0,
-              zIndex: -1,
-            }}
-          />
-        )}
+      {!["Landscaping", "Lot Sweeping", "Snow + Ice"].includes(headerText) && (
+        <img
+          src={screenSize === "small" ? mobileHeader : headerImg}
+          style={{
+            width: "100vw",
+            height: "100vh",
+            objectFit: "cover",
+            right: 0,
+            top: 0,
+            zIndex: -1,
+          }}
+        />
+      )}
 
       {(screenSize === "small" || screenSize === "medium") && (
         <Box

@@ -41,6 +41,7 @@ function Banner() {
             ml: 1,
             color: "#2997FF",
             fontWeight: 500,
+            textDecoration: "none",
           }}
           component="a"
           href="/recurring"

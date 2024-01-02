@@ -97,6 +97,7 @@ const Service = ({ service }) => {
           fontSize: "14px",
           textAlign: "center",
           pl: 1,
+          textDecoration: "none",
         }}
       >
         Learn More &gt;

@@ -1,6 +1,8 @@
 GATSBY to do:
 - fix blog link
 - fix /thankyou
+- fix lag in loading mobile navbar
+- auto scroll to top of page after navigation
 
 DONE ON GATSBY - not needed for production
 - add in washington page

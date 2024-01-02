@@ -10,6 +10,7 @@ import Captcha from "../../components/captcha/captcha";
 import centeredStyle from "../styles/centeredStyle";
 import StyledButton from "../components/styledButton/styledButton";
 import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
+import ThankyouWrapper from "../../contextWrappers/thankyouWrapper";
 
 const arr = [
   {
@@ -220,7 +221,7 @@ function LandingContact() {
           setContactForm({});
           setSubmitted(true);
           setActiveStep(0);
-          // window.location.href = `${window.location.href}thankyou`;
+          window.location.href = `${window.location.href}thankyou`;
         });
     }
 
@@ -245,239 +246,246 @@ function LandingContact() {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        py: { xs: "35vh", md: "30vh", xl: "20vh" },
-        bgcolor: "#F5F5F7",
-        position: "relative",
-        justifyContent: "center",
-        display: "flex",
-      }}
-    >
-      <Box sx={{ ...centeredStyle, width: "90vw" }}>
-        <Typography
-          variant="h5"
-          sx={{ fontFamily: "Inter", mb: 5, fontWeight: 500 }}
-        >
-          {arr[activeStep].question}
-        </Typography>
-        <Stepper
-          activeStep={activeStep}
-          sx={{
-            fontFamily: "Inter",
-            fontWeight: 500,
-            mb: activeStep === 2 ? 2 : 5,
-            width: "200px",
-            ml: "calc(50% - 100px )",
-            "& .MuiStepLabel-iconContainer": {
-              pr: 0,
-            },
-            "& .MuiStep-root": {
-              pr: 0,
-              pl: 0,
-            },
-            "& .MuiStepConnector-line": {
-              borderColor: "#000000",
-              borderTopWidth: "2px",
-            },
-          }}
-        >
-          <Step onClick={() => setActiveStep(0)}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
-          </Step>
-          <Step onClick={() => setActiveStep(1)}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
-          </Step>
-          <Step onClick={() => setActiveStep(2)}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
-          </Step>
-        </Stepper>
-
-        {activeStep === 2 && screenSize === "small" && (
-          <>
-            <Typography
-              sx={{
-                mb: 1,
-                fontFamily: "Inter",
-                fontWeight: 300,
-                fontSize: "12px",
-              }}
-            >
-              Click on a field below to start typing.
-            </Typography>
-            <Typography
-              sx={{
-                mb: 2,
-                fontFamily: "Inter",
-                fontWeight: 300,
-                fontSize: "12px",
-              }}
-            >
-              All fields are required.
-            </Typography>
-          </>
-        )}
-        {activeStep === 2 &&
-          (screenSize === "medium" ||
-            screenSize === "large" ||
-            screenSize === "xl") && (
-            <Typography
-              sx={{
-                mb: 2,
-                fontFamily: "Inter",
-                fontWeight: 300,
-                fontSize: "12px",
-              }}
-            >
-              Click on a field below to start typing. All fields are required.
-            </Typography>
-          )}
-
-        {arr[activeStep].answers.map((step, index) => {
-          return (
-            <>
-              {activeStep !== 2 && (
-                <Chip
-                  variant="outlined"
-                  key={step}
-                  label={step}
-                  sx={{
-                    mx: 1,
-                    border: "2px solid #333333",
-                    mb:
-                      screenSize !== "small" && screenSize !== "medium" ? 0 : 2,
-                    width: "200px",
-                    fontFamily: "Inter",
-                    fontWeight: 500,
-                  }}
-                  onClick={() => handleFormChange(step)}
-                />
-              )}
-              {activeStep === 2 && (
-                <input
-                  placeholder={step}
-                  style={{
-                    margin:
-                      screenSize === "large" || screenSize === "xl"
-                        ? "0px 8px 0px 8px"
-                        : "0px 8px 16px 8px",
-                    border:
-                      (step === "Email *" && errors.email) ||
-                      (step === "Phone Number *" && errors.phone)
-                        ? "2px solid red"
-                        : "2px solid #333333",
-                    width: "200px",
-                    fontFamily: "Inter",
-                    fontWeight: 500,
-                    borderRadius: "16px",
-                    textAlign: "center",
-                    height: "32px",
-                    fontSize: "0.8125rem",
-                  }}
-                  onChange={(e) => {
-                    handleInputChange(e);
-                    if (step === "Email *") {
-                      setErrors({
-                        ...errors,
-                        email: false,
-                      });
-                      setValidEmail(true);
-                    }
-                    if (step === "Phone Number *") {
-                      setErrors({
-                        ...errors,
-                        phone: false,
-                      });
-                    }
-                  }}
-                  id={arr[2].keys[index]}
-                  required
-                  value={contactForm[arr[2].keys[index]] || ""}
-                />
-              )}
-
-              {screenSize === "small" && <br />}
-              {screenSize === "medium" && index === 2 && <br />}
-            </>
-          );
-        })}
-
-        {(errors.phone || errors.email) && (
+    <ThankyouWrapper>
+      <Box
+        sx={{
+          width: "100vw",
+          py: { xs: "35vh", md: "30vh", xl: "20vh" },
+          bgcolor: "#F5F5F7",
+          position: "relative",
+          justifyContent: "center",
+          display: "flex",
+        }}
+      >
+        <Box sx={{ ...centeredStyle, width: "90vw" }}>
           <Typography
-            color="error"
-            sx={{
-              fontFamily: "Inter",
-              fontSize: "14px",
-              fontWeight: 600,
-              my: 2,
-            }}
+            variant="h5"
+            sx={{ fontFamily: "Inter", mb: 5, fontWeight: 500 }}
           >
-            Please fill out the required fields
+            {arr[activeStep].question}
           </Typography>
-        )}
-
-        {!validEmail && (
-          <Typography
-            color="error"
+          <Stepper
+            activeStep={activeStep}
             sx={{
-              fontFamily: "Inter",
-              fontSize: "14px",
-              fontWeight: 600,
-              my: 2,
-            }}
-          >
-            Please enter a valid email
-          </Typography>
-        )}
-
-        {(screenSize === "large" || screenSize === "xl") &&
-          activeStep === 2 &&
-          !errors.phone &&
-          !errors.email &&
-          validEmail && (
-            <>
-              <br />
-              <br />
-            </>
-          )}
-
-        {activeStep === 2 && !submitted && submitEnabled && (
-          <StyledButton
-            sx={{ fontSize: "12px" }}
-            onClick={submit}
-            variant="contained"
-          >
-            Submit
-          </StyledButton>
-        )}
-
-        {activeStep === 2 && !submitted && !submitEnabled && (
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            <Captcha onChange={() => setSubmitEnabled(true)} />
-          </Box>
-        )}
-
-        {submitted && (
-          <Typography
-            sx={{
-              mt: { xs: 3, md: 5 },
               fontFamily: "Inter",
               fontWeight: 500,
+              mb: activeStep === 2 ? 2 : 5,
+              width: "200px",
+              ml: "calc(50% - 100px )",
+              "& .MuiStepLabel-iconContainer": {
+                pr: 0,
+              },
+              "& .MuiStep-root": {
+                pr: 0,
+                pl: 0,
+              },
+              "& .MuiStepConnector-line": {
+                borderColor: "#000000",
+                borderTopWidth: "2px",
+              },
             }}
           >
-            <TaskAlt color="success" sx={{ verticalAlign: "middle", mr: 1 }} />
-            Thank you for contacting us! Someone will reach out to shortly
-          </Typography>
-        )}
+            <Step onClick={() => setActiveStep(0)}>
+              <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
+            </Step>
+            <Step onClick={() => setActiveStep(1)}>
+              <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
+            </Step>
+            <Step onClick={() => setActiveStep(2)}>
+              <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
+            </Step>
+          </Stepper>
+
+          {activeStep === 2 && screenSize === "small" && (
+            <>
+              <Typography
+                sx={{
+                  mb: 1,
+                  fontFamily: "Inter",
+                  fontWeight: 300,
+                  fontSize: "12px",
+                }}
+              >
+                Click on a field below to start typing.
+              </Typography>
+              <Typography
+                sx={{
+                  mb: 2,
+                  fontFamily: "Inter",
+                  fontWeight: 300,
+                  fontSize: "12px",
+                }}
+              >
+                All fields are required.
+              </Typography>
+            </>
+          )}
+          {activeStep === 2 &&
+            (screenSize === "medium" ||
+              screenSize === "large" ||
+              screenSize === "xl") && (
+              <Typography
+                sx={{
+                  mb: 2,
+                  fontFamily: "Inter",
+                  fontWeight: 300,
+                  fontSize: "12px",
+                }}
+              >
+                Click on a field below to start typing. All fields are required.
+              </Typography>
+            )}
+
+          {arr[activeStep].answers.map((step, index) => {
+            return (
+              <>
+                {activeStep !== 2 && (
+                  <Chip
+                    variant="outlined"
+                    key={step}
+                    label={step}
+                    sx={{
+                      mx: 1,
+                      border: "2px solid #333333",
+                      mb:
+                        screenSize !== "small" && screenSize !== "medium"
+                          ? 0
+                          : 2,
+                      width: "200px",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                    }}
+                    onClick={() => handleFormChange(step)}
+                  />
+                )}
+                {activeStep === 2 && (
+                  <input
+                    placeholder={step}
+                    style={{
+                      margin:
+                        screenSize === "large" || screenSize === "xl"
+                          ? "0px 8px 0px 8px"
+                          : "0px 8px 16px 8px",
+                      border:
+                        (step === "Email *" && errors.email) ||
+                        (step === "Phone Number *" && errors.phone)
+                          ? "2px solid red"
+                          : "2px solid #333333",
+                      width: "200px",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      borderRadius: "16px",
+                      textAlign: "center",
+                      height: "32px",
+                      fontSize: "0.8125rem",
+                    }}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                      if (step === "Email *") {
+                        setErrors({
+                          ...errors,
+                          email: false,
+                        });
+                        setValidEmail(true);
+                      }
+                      if (step === "Phone Number *") {
+                        setErrors({
+                          ...errors,
+                          phone: false,
+                        });
+                      }
+                    }}
+                    id={arr[2].keys[index]}
+                    required
+                    value={contactForm[arr[2].keys[index]] || ""}
+                  />
+                )}
+
+                {screenSize === "small" && <br />}
+                {screenSize === "medium" && index === 2 && <br />}
+              </>
+            );
+          })}
+
+          {(errors.phone || errors.email) && (
+            <Typography
+              color="error"
+              sx={{
+                fontFamily: "Inter",
+                fontSize: "14px",
+                fontWeight: 600,
+                my: 2,
+              }}
+            >
+              Please fill out the required fields
+            </Typography>
+          )}
+
+          {!validEmail && (
+            <Typography
+              color="error"
+              sx={{
+                fontFamily: "Inter",
+                fontSize: "14px",
+                fontWeight: 600,
+                my: 2,
+              }}
+            >
+              Please enter a valid email
+            </Typography>
+          )}
+
+          {(screenSize === "large" || screenSize === "xl") &&
+            activeStep === 2 &&
+            !errors.phone &&
+            !errors.email &&
+            validEmail && (
+              <>
+                <br />
+                <br />
+              </>
+            )}
+
+          {activeStep === 2 && !submitted && submitEnabled && (
+            <StyledButton
+              sx={{ fontSize: "12px" }}
+              onClick={submit}
+              variant="contained"
+            >
+              Submit
+            </StyledButton>
+          )}
+
+          {activeStep === 2 && !submitted && !submitEnabled && (
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
+              <Captcha onChange={() => setSubmitEnabled(true)} />
+            </Box>
+          )}
+
+          {submitted && (
+            <Typography
+              sx={{
+                mt: { xs: 3, md: 5 },
+                fontFamily: "Inter",
+                fontWeight: 500,
+              }}
+            >
+              <TaskAlt
+                color="success"
+                sx={{ verticalAlign: "middle", mr: 1 }}
+              />
+              Thank you for contacting us! Someone will reach out to shortly
+            </Typography>
+          )}
+        </Box>
       </Box>
-    </Box>
+    </ThankyouWrapper>
   );
 }
 

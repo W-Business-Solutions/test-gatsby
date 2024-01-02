@@ -184,10 +184,10 @@ function ContactModal({ open, setOpen, page }) {
           }
         )
         .then((res) => {
-          // window.location.href =
-          //   pathname === "/"
-          //     ? `${window.location.href}thankyou`
-          //     : `${window.location.href}/thankyou`;
+          window.location.href =
+            pathname === "/"
+              ? `${window.location.href}thankyou`
+              : `${window.location.href}/thankyou`;
         });
     }
 

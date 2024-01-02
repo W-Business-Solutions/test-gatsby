@@ -23,6 +23,7 @@ function ThemeContext({ children }) {
       a: {
         textDecoration: "none",
       },
+      textDecoration: "none",
     },
     MuiButton: {
       fontFamily: ["Inter", "sans-serif"].join(","),
@@ -43,6 +44,9 @@ function ThemeContext({ children }) {
           fontFamily: ["Inter", "sans-serif"].join(","),
         },
       },
+    },
+    a: {
+      textDecoration: "none",
     },
   });
 

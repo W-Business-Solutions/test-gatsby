@@ -14,6 +14,7 @@ import { useContext } from "react";
 import { ScreenSizeContext } from "../../contextWrappers/screenSizeContext";
 import Captcha from "../../components/captcha/captcha";
 import { FormControl, FormControlLabel, Checkbox } from "@mui/material";
+import ThankyouWrapper from "../../contextWrappers/thankyouWrapper";
 
 const hubspot_owner_ids = {
   Maintenance: "216697651", // virginia's hubspot id
@@ -179,10 +180,10 @@ function ContactForm({ service, page }) {
             phone: "",
           });
           setIsSubmitted(true);
-          // window.location.href =
-          //   pathname === "/"
-          //     ? `${window.location.href}thankyou`
-          //     : `${window.location.href}/thankyou`;
+          window.location.href =
+            pathname === "/"
+              ? `${window.location.href}thankyou`
+              : `${window.location.href}/thankyou`;
         });
     }
   }
@@ -195,173 +196,80 @@ function ContactForm({ service, page }) {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        bgcolor: "white",
-        boxShadow: { xs: 0, lg: 24 },
-        py: page === "everett" ? 2 : 5,
-        px: { xs: 2, md: 15, lg: 7 },
-        borderRadius: "5px",
-        maxHeight: { xs: "100%", md: "90vh" },
-        overflowY: "auto",
-      }}
-    >
-      {page === "everett" && (
-        <>
-          <Typography
-            sx={{
-              fontFamily: "Inter",
-              m: "0 auto",
-            }}
-          >
-            Our new customers:
-          </Typography>
-          <ul
-            style={{
-              textAlign: "left",
-              marginBottom: "24px",
-              fontFamily: "Inter",
-            }}
-          >
-            <li>Save on average 20-30% in overhead costs</li>
-            <li>Lower your facilities vendor list to one company</li>
-          </ul>
-        </>
-      )}
-      {screenSize !== "large" && screenSize !== "xl" && !service && (
-        <>
-          <Typography
-            sx={{
-              color: "#86868B",
-              fontFamily: "Inter",
-              pb: 2,
-              maxWidth: "90%",
-              m: "0 auto",
-              fontSize: "14px",
-            }}
-          >
-            Reach out to our dedicated team at Transblue to discover how we can
-            elevate your commercial and multi-site operations by providing
-            exceptional solutions tailored to your needs.
-          </Typography>
-          <Typography
-            sx={{
-              color: "#86868B",
-              fontFamily: "Inter",
-              maxWidth: "90%",
-              m: "0 auto",
-              fontSize: "14px",
-              pb: 1,
-            }}
-          >
-            We're here to help you succeed in your business ventures.
-          </Typography>
-        </>
-      )}
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
-          <InputBase
-            value={contactForm?.firstName}
-            fullWidth
-            size="small"
-            onChange={handleChange}
-            id="firstName"
-            placeholder="First Name"
-            inputProps={{
-              sx: {
-                bgcolor: "#F5F5F7",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={placeholderStyle}
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <InputBase
-            value={contactForm?.lastName}
-            fullWidth
-            size="small"
-            onChange={handleChange}
-            id="lastName"
-            placeholder="Last Name"
-            inputProps={{
-              sx: {
-                border: "0px",
-                bgcolor: "#F5F5F7",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={placeholderStyle}
-          />
-        </Grid>
-
-        <Grid item xs={12}>
-          <InputBase
-            value={contactForm?.email}
-            fullWidth
-            size="small"
-            onChange={(e) => {
-              handleChange(e);
-              setErrors({
-                ...errors,
-                email: false,
-              });
-            }}
-            id="email"
-            placeholder="Email *"
-            required
-            inputProps={{
-              sx: {
-                border: "0px",
-                bgcolor: "#F5F5F7",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={errors.email ? errorStyle : placeholderStyle}
-          />
-        </Grid>
-        <Grid item xs={12} md={page === "everett" ? 12 : 6}>
-          <InputBase
-            value={contactForm?.phone}
-            fullWidth
-            size="small"
-            id="phone"
-            placeholder="Phone *"
-            required
-            onChange={(e) => {
-              handleChange(e);
-              setErrors({
-                ...errors,
-                phone: false,
-              });
-            }}
-            inputProps={{
-              sx: {
-                bgcolor: "#F5F5F7",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
-            }}
-            sx={errors.phone ? errorStyle : placeholderStyle}
-          />
-        </Grid>
-        {page !== "everett" && (
+    <ThankyouWrapper>
+      <Box
+        sx={{
+          width: "100%",
+          bgcolor: "white",
+          boxShadow: { xs: 0, lg: 24 },
+          py: page === "everett" ? 2 : 5,
+          px: { xs: 2, md: 15, lg: 7 },
+          borderRadius: "5px",
+          maxHeight: { xs: "100%", md: "90vh" },
+          overflowY: "auto",
+        }}
+      >
+        {page === "everett" && (
+          <>
+            <Typography
+              sx={{
+                fontFamily: "Inter",
+                m: "0 auto",
+              }}
+            >
+              Our new customers:
+            </Typography>
+            <ul
+              style={{
+                textAlign: "left",
+                marginBottom: "24px",
+                fontFamily: "Inter",
+              }}
+            >
+              <li>Save on average 20-30% in overhead costs</li>
+              <li>Lower your facilities vendor list to one company</li>
+            </ul>
+          </>
+        )}
+        {screenSize !== "large" && screenSize !== "xl" && !service && (
+          <>
+            <Typography
+              sx={{
+                color: "#86868B",
+                fontFamily: "Inter",
+                pb: 2,
+                maxWidth: "90%",
+                m: "0 auto",
+                fontSize: "14px",
+              }}
+            >
+              Reach out to our dedicated team at Transblue to discover how we
+              can elevate your commercial and multi-site operations by providing
+              exceptional solutions tailored to your needs.
+            </Typography>
+            <Typography
+              sx={{
+                color: "#86868B",
+                fontFamily: "Inter",
+                maxWidth: "90%",
+                m: "0 auto",
+                fontSize: "14px",
+                pb: 1,
+              }}
+            >
+              We're here to help you succeed in your business ventures.
+            </Typography>
+          </>
+        )}
+        <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <InputBase
-              value={contactForm?.numlocations}
+              value={contactForm?.firstName}
               fullWidth
               size="small"
               onChange={handleChange}
-              id="numlocations"
-              placeholder="Number of Locations"
+              id="firstName"
+              placeholder="First Name"
               inputProps={{
                 sx: {
                   bgcolor: "#F5F5F7",
@@ -369,82 +277,177 @@ function ContactForm({ service, page }) {
                   p: 1,
                   textAlign: "center",
                 },
-                type: "number",
-                min: 0,
               }}
               sx={placeholderStyle}
             />
           </Grid>
+          <Grid item xs={12} md={6}>
+            <InputBase
+              value={contactForm?.lastName}
+              fullWidth
+              size="small"
+              onChange={handleChange}
+              id="lastName"
+              placeholder="Last Name"
+              inputProps={{
+                sx: {
+                  border: "0px",
+                  bgcolor: "#F5F5F7",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={placeholderStyle}
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <InputBase
+              value={contactForm?.email}
+              fullWidth
+              size="small"
+              onChange={(e) => {
+                handleChange(e);
+                setErrors({
+                  ...errors,
+                  email: false,
+                });
+              }}
+              id="email"
+              placeholder="Email *"
+              required
+              inputProps={{
+                sx: {
+                  border: "0px",
+                  bgcolor: "#F5F5F7",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={errors.email ? errorStyle : placeholderStyle}
+            />
+          </Grid>
+          <Grid item xs={12} md={page === "everett" ? 12 : 6}>
+            <InputBase
+              value={contactForm?.phone}
+              fullWidth
+              size="small"
+              id="phone"
+              placeholder="Phone *"
+              required
+              onChange={(e) => {
+                handleChange(e);
+                setErrors({
+                  ...errors,
+                  phone: false,
+                });
+              }}
+              inputProps={{
+                sx: {
+                  bgcolor: "#F5F5F7",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={errors.phone ? errorStyle : placeholderStyle}
+            />
+          </Grid>
+          {page !== "everett" && (
+            <Grid item xs={12} md={6}>
+              <InputBase
+                value={contactForm?.numlocations}
+                fullWidth
+                size="small"
+                onChange={handleChange}
+                id="numlocations"
+                placeholder="Number of Locations"
+                inputProps={{
+                  sx: {
+                    bgcolor: "#F5F5F7",
+                    borderRadius: "5px",
+                    p: 1,
+                    textAlign: "center",
+                  },
+                  type: "number",
+                  min: 0,
+                }}
+                sx={placeholderStyle}
+              />
+            </Grid>
+          )}
+
+          <Grid item xs={12}>
+            <InputBase
+              value={contactForm?.message}
+              fullWidth
+              size="small"
+              onChange={handleChange}
+              id="message"
+              placeholder="Message"
+              multiline
+              minRows={page === "everett" && screenSize === "large" ? 1 : 4}
+              inputProps={{
+                sx: {
+                  bgcolor: "#F5F5F7",
+                  borderRadius: "5px",
+                  p: 1,
+                  textAlign: "center",
+                },
+              }}
+              sx={placeholderStyle}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={contactForm.sms}
+                    onChange={() =>
+                      setContactForm({
+                        ...contactForm,
+                        sms: !contactForm.sms,
+                      })
+                    }
+                  />
+                }
+                label="Opt-In to receive SMS Messages"
+              />
+            </FormControl>
+          </Grid>
+        </Grid>
+
+        {!submitEnabled && (
+          <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+            <Captcha onChange={() => setSubmitEnabled(true)} />
+          </Box>
         )}
 
-        <Grid item xs={12}>
-          <InputBase
-            value={contactForm?.message}
-            fullWidth
-            size="small"
-            onChange={handleChange}
-            id="message"
-            placeholder="Message"
-            multiline
-            minRows={page === "everett" && screenSize === "large" ? 1 : 4}
-            inputProps={{
-              sx: {
-                bgcolor: "#F5F5F7",
-                borderRadius: "5px",
-                p: 1,
-                textAlign: "center",
-              },
+        {!isSubmitted && submitEnabled && (
+          <StyledButton
+            sx={{
+              bgcolor: "#007AFF",
+              fontSize: "12px",
+              width: { xs: "100%", md: "74%" },
+              mt: 2,
             }}
-            sx={placeholderStyle}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControl fullWidth>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={contactForm.sms}
-                  onChange={() =>
-                    setContactForm({
-                      ...contactForm,
-                      sms: !contactForm.sms,
-                    })
-                  }
-                />
-              }
-              label="Opt-In to receive SMS Messages"
-            />
-          </FormControl>
-        </Grid>
-      </Grid>
+            variant="contained"
+            onClick={submit}
+          >
+            submit
+          </StyledButton>
+        )}
 
-      {!submitEnabled && (
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-          <Captcha onChange={() => setSubmitEnabled(true)} />
-        </Box>
-      )}
-
-      {!isSubmitted && submitEnabled && (
-        <StyledButton
-          sx={{
-            bgcolor: "#007AFF",
-            fontSize: "12px",
-            width: { xs: "100%", md: "74%" },
-            mt: 2,
-          }}
-          variant="contained"
-          onClick={submit}
-        >
-          submit
-        </StyledButton>
-      )}
-
-      {isSubmitted && (
-        <Alert severity="success" fullWidth sx={{ mt: { xs: 2, lg: 3 } }}>
-          Thank you! Someone from our team will reach out to you shortly
-        </Alert>
-      )}
-    </Box>
+        {isSubmitted && (
+          <Alert severity="success" fullWidth sx={{ mt: { xs: 2, lg: 3 } }}>
+            Thank you! Someone from our team will reach out to you shortly
+          </Alert>
+        )}
+      </Box>
+    </ThankyouWrapper>
   );
 }
 
