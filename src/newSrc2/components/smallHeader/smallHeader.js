@@ -9,17 +9,10 @@ function SmallHeader({ title, page, template, subtitle }) {
   const screenSizeContext = useContext(ScreenSizeContext);
   const { screenSize } = screenSizeContext;
 
-  const [mt, setMt] = useState("36px");
-
-  useEffect(() => {
-    if (screenSize === "small") {
-      // leave mt at 36px for all small screens
-    } else {
-      if (page !== "contact" && page !== "privacy" && page !== "weather") {
-        setMt("96px");
-      }
-    }
-  }, []);
+  const mt =
+    page !== "contact" || page !== "privacy" || page !== "weather"
+      ? "85px"
+      : "36px";
 
   return (
     <Box sx={{ mt: mt, width: "100vw", position: "relative" }}>

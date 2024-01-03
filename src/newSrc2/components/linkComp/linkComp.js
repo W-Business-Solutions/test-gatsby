@@ -39,7 +39,7 @@ const LinkComp = ({ img, href, title }) => {
               zIndex: 5,
               ...centeredStyle,
               color: "white",
-              fontWeight: 500,
+              fontWeight: 600,
               width: { xs: "90%", lg: "75%" },
               textAlign: "center",
             }}

@@ -62,6 +62,7 @@ const LearnMore = ({ link }) => {
         fontWeight: 500,
         fontSize: { lg: "14px", xl: "16px" },
         // fontSize: { xl: '18px'}
+        textDecoration: "none",
       }}
     >
       Learn more <NavigateNext sx={{ fontSize: "18px" }} />

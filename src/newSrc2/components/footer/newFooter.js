@@ -199,6 +199,7 @@ function Footer() {
                     color: "#D2D2D7",
                     fontFamily: "Inter",
                     textAlign: "center",
+                    textDecoration: "none",
                   }}
                 >
                   (844) 482-2583
@@ -210,6 +211,7 @@ function Footer() {
                     fontSize: "12px",
                     color: "#D2D2D7",
                     fontFamily: "Inter",
+                    textDecoration: "none",
                   }}
                 >
                   sales@transblue.org

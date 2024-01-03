@@ -481,7 +481,7 @@ function NewJanitorial(props) {
       />
       <Brands bgcolor="rgba(67, 67, 68, 1)" />
 
-      {/* <Facilities displayTitle /> */}
+      <Facilities displayTitle />
 
       <ReliabilityCTA
         buttonText="Let's get started"

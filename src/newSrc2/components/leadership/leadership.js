@@ -42,6 +42,7 @@ const LeftComp = ({ name, title, body, image, link, alt }) => {
               color: "#007AFF",
               fontFamily: "Inter",
               fontWeight: 500,
+              textDecoration: "none",
             }}
           >
             Connect with {name.split(" ")[0]}{" "}
@@ -90,6 +91,7 @@ const LeftComp = ({ name, title, body, image, link, alt }) => {
               color: "#007AFF",
               fontFamily: "Inter",
               fontWeight: 500,
+              textDecoration: "none",
             }}
           >
             Connect with {name.split(" ")[0]}{" "}
@@ -133,6 +135,7 @@ const RightComp = ({ name, title, body, image, link, alt }) => (
             color: "#007AFF",
             fontFamily: "Inter",
             fontWeight: 500,
+            textDecoration: "none",
           }}
         >
           Connect with {name.split(" ")[0]}{" "}

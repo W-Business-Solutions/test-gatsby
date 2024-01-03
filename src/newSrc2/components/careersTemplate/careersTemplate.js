@@ -160,6 +160,7 @@ function CareersTemplate(props) {
               fontWeight: 500,
               border: "2px solid black",
               height: "37px",
+              textDecoration: "none",
             }}
             variant="contained"
             onClick={handleScroll}

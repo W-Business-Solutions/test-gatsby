@@ -100,6 +100,7 @@ function NewAbout() {
                   color: "#007AFF",
                   fontFamily: "Inter",
                   fontWeight: 500,
+                  textDecoration: "none",
                 }}
               >
                 Read More <NavigateNext sx={{ fontSize: "18px" }} />

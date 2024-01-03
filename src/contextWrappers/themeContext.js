@@ -45,9 +45,6 @@ function ThemeContext({ children }) {
         },
       },
     },
-    a: {
-      textDecoration: "none",
-    },
   });
 
   return (
